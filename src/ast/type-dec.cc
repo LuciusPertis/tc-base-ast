@@ -10,6 +10,7 @@ namespace ast
 {
   TypeDec::TypeDec(const Location& location, const misc::symbol& name, Ty* ty)
     : Dec(location, name)
+    , TypeConstructor()
     , ty_(ty)
   {}
 
