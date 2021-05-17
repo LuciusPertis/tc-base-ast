@@ -15,6 +15,36 @@
 namespace misc
 {
   // Defining some concepts sepecific to variants:
+  namespace detail
+  {
+    // The type T is different from all types in a variadic template Ts.
+    template <typename T, typename... Ts>
+    struct first_different_from_others
+      : std::conjunction<std::negation<std::is_same<T, Ts>>...>
+    {};
+
+    // All types are unique
+    template <typename T, typename... Ts> struct unique_types
+    {
+      static const bool value = first_different_from_others<T, Ts...>::value
+        && unique_types<Ts...>::value;
+    };
+
+    // All types are unique, terminal case with only one template
+    template <typename T> struct unique_types<T>
+    {
+      static const bool value = true;
+    };
+  } // namespace detail
+
+  // Concept describing the properties of the types given to misc:variant
+  template <typename T, typename... Ts>
+  concept VariantTypes =
+    // No type is const-qualified among the variadic template.
+    // All types are unique in a given variadic template
+    // The type of the first template parameter is default constructible
+  // FIXME: Some code was deleted here.
+    true;
 
   // Type T can be converted into another type in Ts,
   // used to set the variant's value.
@@ -42,7 +72,7 @@ namespace misc
   ///   misc::variant<T, T1, ..., Tn>
 
   template <typename T, typename... Ts>
-  class variant : public std::variant<T, Ts...>
+  requires VariantTypes<T, Ts...> class variant : public std::variant<T, Ts...>
   {
   public:
     /// The type of this variant.

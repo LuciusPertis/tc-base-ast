@@ -1,0 +1,12 @@
+## canon module.
+src_libtc_la_SOURCES +=						\
+  %D%/canon.hh %D%/canon.cc					\
+  %D%/exp-matcher.hh %D%/exp-matcher.cc					\
+  %D%/stm-matcher.hh %D%/stm-matcher.cc					\
+  %D%/basic-block.hh %D%/basic-block.hxx %D%/basic-block.cc	\
+  %D%/traces.hh %D%/traces.cc					\
+  %D%/libcanon.cc %D%/libcanon.hh
+
+EXTRA_DIST += %D%/tiger_canon.i
+
+TASKS += %D%/tasks.hh %D%/tasks.cc

@@ -66,5 +66,27 @@ int main()
       exit(EXIT_FAILURE);
   }
 
+  // failing constraints
+  {
+    // Unique types
+    bool failure = misc::VariantTypes<int, std::string, int>;
+
+    // No const
+    failure = failure || misc::VariantTypes<const int, char, float>;
+    failure = failure || misc::VariantTypes<int, char, const float>;
+
+    // Struct defined to test Variant's concepts
+    struct NotDefaultConstructible
+    {
+      NotDefaultConstructible() = delete;
+    };
+
+    // first must be default constructible
+    failure = failure || misc::VariantTypes<NotDefaultConstructible, int>;
+
+    if (failure)
+      exit(EXIT_FAILURE);
+  }
+
   exit(EXIT_SUCCESS);
 }
