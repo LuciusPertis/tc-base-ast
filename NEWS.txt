@@ -1,3 +1,8 @@
+Bump 1.90.f, 2021-05-20
+
+* Register allocator:
+  - Fix infinite loop
+
 Bump 1.90.e, 2021-05-17
 
 Bump 1.90.d, 2021-03-28

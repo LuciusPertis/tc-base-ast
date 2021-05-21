@@ -76,5 +76,7 @@ include src/tree/local.am
 include src/frame/local.am
 include src/translate/local.am
 include src/canon/local.am
+include src/assem/local.am
 include src/llvmtranslate/local.am
+include src/target/local.am
 include src/combine/local.am

@@ -1,0 +1,42 @@
+dist_noinst_DATA += %D%/runtime.s
+
+CLEANFILES += %D%/runtime.cc
+%D%/runtime.cc: $(srcdir)/%D%/runtime.s
+	$(AM_V_GEN)$(AWK)						\
+	   'BEGIN {							\
+	     print("#include \"target/mips/spim-assembly.hh\"");	\
+	     print("");							\
+	     print("namespace target {");				\
+	     print("namespace mips {");					\
+	     print("const char* SpimAssembly::runtime(bool) const");	\
+	     print("{");						\
+	     print("  return \"\\");					\
+	   }								\
+	   /^\#(<<|>>)/ {						\
+	     next;							\
+	   }								\
+	   {								\
+	     gsub(/[\\\"]/, "\\\\&", $$0);				\
+	     print($$0 "\\n\\");}					\
+	   END {							\
+	     print("\";");						\
+	     print("}");						\
+	     print("} // namespace mips");				\
+	     print("} // namespace target");				\
+	     print("");							\
+	   }'								\
+	  $< >$@.tmp
+	$(AM_V_at)mv $@.tmp $@
+
+src_libtc_la_SOURCES +=				\
+  %D%/cpu.hh %D%/cpu.cc				\
+  %D%/spim-layout.hh %D%/spim-layout.cc		\
+  %D%/spim-assembly.hh %D%/spim-assembly.cc	\
+  %D%/spim-codegen.hh %D%/spim-codegen.cc			\
+  %D%/spim-matcher.hh %D%/spim-matcher.cc			\
+  %D%/target.hh %D%/target.cc
+
+nodist_src_libtc_la_SOURCES += %D%/runtime.cc
+
+check_PROGRAMS += %D%/test-target
+%C%_test_target_LDADD = src/libtc.la
