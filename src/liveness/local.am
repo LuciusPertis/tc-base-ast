@@ -1,0 +1,16 @@
+## liveness module.
+CLEANFILES += *~ *.gv
+
+src_libtc_la_SOURCES +=					\
+  %D%/flowgraph.hh %D%/flowgraph.hxx			\
+  %D%/liveness.hh %D%/liveness.cc			\
+  %D%/interference-graph.hh				\
+  %D%/interference-graph.cc %D%/interference-graph.hxx	\
+  %D%/libliveness.hh %D%/libliveness.cc
+
+check_PROGRAMS += %D%/test-flowgraph
+%C%_test_flowgraph_LDADD = src/libtc.la
+
+EXTRA_DIST += %D%/tiger_liveness.i
+
+TASKS += %D%/tasks.hh %D%/tasks.cc
