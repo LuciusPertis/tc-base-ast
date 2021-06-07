@@ -1,0 +1,12 @@
+## regalloc module.
+src_libtc_la_SOURCES +=				\
+   %D%/color.hh %D%/color.cc			\
+   %D%/regallocator.hh %D%/regallocator.cc	\
+   %D%/libregalloc.cc %D%/libregalloc.hh
+
+check_PROGRAMS += %D%/test-regalloc
+%C%_test_regalloc_LDADD = src/libtc.la
+
+EXTRA_DIST += %D%/tiger_regalloc.i
+
+TASKS += %D%/tasks.hh %D%/tasks.cc

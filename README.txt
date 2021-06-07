@@ -1,6 +1,6 @@
 
 Number of suppressed lines, suppressed chunks, average chunks size:
-.                             : 6354 466  13
+.                             : 6633 493  13
     lib                       :  255  16  15
         misc                  :  255  16  15
             scoped-map.hh     :   65   2  32
@@ -11,7 +11,7 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             unique.hxx        :    8   5   1
             variant.hh        :    6   1   6
             variant.hxx       :    1   1   1
-    src                       : 6099 450  13
+    src                       : 6378 477  13
         ast                   : 1404  70  20
             array-exp.cc      :   20   1  20
             array-exp.hh      :   42   1  42
@@ -135,6 +135,9 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             tasks.cc          :    1   1   1
             tiger-driver.hxx  :   14  14   1
             tiger-parser.cc   :    7   1   7
+        regalloc              :  279  27  10
+            color.cc          :  277  26  10
+            regallocator.cc   :    2   1   2
         target                :  983  35  28
             arm               :  231   8  28
                 arm-assembly.cc:    4   2   2
