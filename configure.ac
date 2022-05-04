@@ -12,7 +12,7 @@ AC_PREREQ([2.64])
 ## Package set up.  ##
 ## ---------------- ##
 
-AC_INIT([LRDE Tiger Compiler], [1.91.e], [tiger@lrde.epita.fr], [tc],
+AC_INIT([LRDE Tiger Compiler], [1.91.f], [tiger@lrde.epita.fr], [tc],
         [http://tiger.lrde.epita.fr])
 
 # Auxiliary files.
@@ -211,6 +211,8 @@ AM_CONDITIONAL([IA32_FREEBSD],
 AM_CONDITIONAL([SUPPORTED_IA32],
                [echo "$host" | grep -q '^\(i.86\|x86_64\).*linux\|^\(i.86\|amd64\).*freebsd'])
 
+# HAVM.
+TC_PROG([havm], [>=TC_HAVM_PREREQ], [HAVM], [The Tree Virtual Machine])
 
 # Debian does not provide a llvm-config binary
 TC_PROG([llvm-config-11 llvm-config], [>=TC_CLANG_PREREQ], [LLVM_CONFIG], [Print LLVM compilation options])

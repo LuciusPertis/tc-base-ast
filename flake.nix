@@ -26,6 +26,8 @@
 
             buildenvPkgs = with buildenv.outputs.packages.${system}; [
               bison
+              havm
+              nolimips
             ];
 
           in
