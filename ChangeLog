@@ -1,3 +1,48 @@
+2022-05-14  Pierre Brandone  <pierre.brandone@epita.fr>
+
+	stm-matcher: remove unreachable pattern
+
+	* src/canon/stm-matcher.cc: Here.
+
+2022-05-14  Pierre Brandone  <pierre.brandone@epita.fr>
+
+	exp-matcher: remove deprecated comment
+
+	* src/canon/exp-matcher.hh: Here.
+
+2022-05-04  Etienne Renault  <renault@lrde.epita.fr>
+
+	Version 1.91.f for 2024-tc-5.0
+
+	* .last-cl-gen, ChangeLog, NEWS.txt,
+	configure.ac: Here.
+
+2022-05-03  Mael Cravero  <mael.cravero@epita.fr>
+
+	canon: use seq instead of stms where expected
+
+	* src/canon/canon.cc,
+	* src/canon/canon.hh,
+	* src/canon/exp-matcher.cc,
+	* src/canon/exp-matcher.hh,
+	* src/canon/stm-matcher.cc: here.
+
+2022-05-03  Mael Cravero  <mael.cravero@epita.fr>
+
+	canon: do not use eseq for pair of exp and stm
+
+	* src/canon/canon.cc,
+	* src/canon/canon.hh,
+	* src/canon/exp-matcher.cc,
+	* src/canon/exp-matcher.hh: here.
+
+2022-04-02  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	shell-posix: remove not POSIX function keyword
+
+	* dev/format.sh: Here.
+	* dev/format: Delete old version.
+
 2022-03-31  Etienne Renault  <renault@lrde.epita.fr>
 
 	 Version 1.91.e for 2024-tc-L.0

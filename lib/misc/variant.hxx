@@ -12,12 +12,16 @@
 
 namespace misc
 {
-  template <typename T, typename... Ts> template <typename U>
+  template <typename T, typename... Ts>
+  requires VariantTypes<T, Ts...>
+  template <typename U>
   requires ContainsTypeSet<U, T, Ts...> variant<T, Ts...>::variant(const U& rhs)
     : super_type(rhs)
   {}
 
-  template <typename T, typename... Ts> template <typename U>
+  template <typename T, typename... Ts>
+  requires VariantTypes<T, Ts...>
+  template <typename U>
   requires ContainsTypeSet<U, T, Ts...> variant<T, Ts...>
   &variant<T, Ts...>::operator=(const U& rhs)
   {
@@ -27,20 +31,26 @@ namespace misc
     return *this;
   }
 
-  template <typename T, typename... Ts> template <typename U>
+  template <typename T, typename... Ts>
+  requires VariantTypes<T, Ts...>
+  template <typename U>
   requires ContainsTypeGet<U, T, Ts...> variant<T, Ts...>::operator U&()
   {
     return std::get<U>(*this);
   }
 
-  template <typename T, typename... Ts> template <typename U>
+  template <typename T, typename... Ts>
+  requires VariantTypes<T, Ts...>
+  template <typename U>
   requires ContainsTypeGet<U, T, Ts...>
     variant<T, Ts...>::operator const U&() const
   {
     // FIXME: Some code was deleted here.
   }
 
-  template <typename T, typename... Ts> template <typename V>
+  template <typename T, typename... Ts>
+  requires VariantTypes<T, Ts...>
+  template <typename V>
   requires Visits<V, T, Ts...>
   auto variant<T, Ts...>::visit(V&& visitor) const
   {
@@ -48,6 +58,7 @@ namespace misc
   }
 
   template <typename T, typename... Ts>
+  requires VariantTypes<T, Ts...>
   template <typename V, class... Variants>
   auto variant<T, Ts...>::visit(V&& visitor, Variants&&... vars)
   {
@@ -55,7 +66,8 @@ namespace misc
   }
 
   template <typename T, typename... Ts>
-  std::ostream& operator<<(std::ostream& os, const variant<T, Ts...>& obj)
+  requires VariantTypes<T, Ts...> std::ostream&
+  operator<<(std::ostream& os, const variant<T, Ts...>& obj)
   {
     PrintVisitor pv(os);
     return std::visit(pv, static_cast<const std::variant<T, Ts...>>(obj));
