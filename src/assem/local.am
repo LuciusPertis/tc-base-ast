@@ -1,0 +1,14 @@
+## assem module.
+src_libtc_la_SOURCES +=					\
+  %D%/fwd.hh %D%/libassem.hh				\
+  %D%/instr.hh %D%/instr.hxx %D%/instr.cc		\
+  %D%/instrs.hh %D%/instrs.cc				\
+  %D%/label.hh %D%/label.hxx				\
+  %D%/move.hh %D%/move.hxx				\
+  %D%/oper.hh %D%/oper.hxx				\
+  %D%/comment.hh %D%/comment.hxx			\
+  %D%/fragment.hh %D%/fragment.hxx %D%/fragment.cc	\
+  %D%/fragments.hh %D%/fragments.cc			\
+  %D%/visitor.hh %D%/visitor.hxx			\
+  %D%/layout.hh %D%/layout.hxx %D%/layout.cc
+

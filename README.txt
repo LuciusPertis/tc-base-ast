@@ -1,6 +1,6 @@
 
 Number of suppressed lines, suppressed chunks, average chunks size:
-.                             : 5061 455  11
+.                             : 6044 490  12
     lib                       :  255  16  15
         misc                  :  255  16  15
             scoped-map.hh     :   65   2  32
@@ -11,7 +11,7 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             unique.hxx        :    8   5   1
             variant.hh        :    6   1   6
             variant.hxx       :    1   1   1
-    src                       : 4806 439  10
+    src                       : 5789 474  12
         ast                   : 1433  98  14
             array-exp.cc      :   20   1  20
             array-exp.hh      :   42   1  42
@@ -132,6 +132,22 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             tasks.cc          :    1   1   1
             tiger-driver.hxx  :   14  14   1
             tiger-parser.cc   :    6   3   2
+        target                :  983  35  28
+            arm               :  231   8  28
+                arm-assembly.cc:    4   2   2
+                arm-codegen.cc:  123   1 123
+                arm-matcher.cc:   14   3   4
+                runtime.s     :   90   2  45
+            ia32              :  343   8  42
+                gas-assembly.cc:    5   2   2
+                gas-codegen.cc:  181   1 181
+                gas-matcher.cc:   12   3   4
+                runtime-gnu-linux.s:  145   2  72
+            mips              :  409  19  21
+                runtime.s     :  214   6  35
+                spim-assembly.cc:   58   9   6
+                spim-codegen.cc:  123   1 123
+                spim-matcher.cc:   14   3   4
         temp                  :   54  16   3
             identifier.hxx    :   54  16   3
         translate             :  260  37   7

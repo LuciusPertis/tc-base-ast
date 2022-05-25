@@ -1,3 +1,10 @@
+2022-05-16  Etienne Renault  <renault@lrde.epita.fr>
+
+	 Version 1.91.g for 2024-tc-6.0
+
+	* .last-cl-gen, ChangeLog, NEWS.txt,
+	configure.ac: Here.
+
 2022-05-14  Pierre Brandone  <pierre.brandone@epita.fr>
 
 	stm-matcher: remove unreachable pattern

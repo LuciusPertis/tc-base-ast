@@ -1,0 +1,21 @@
+include %D%/mips/local.am
+include %D%/ia32/local.am
+include %D%/arm/local.am
+
+# Libtarget
+src_libtc_la_SOURCES +=				\
+  %D%/fwd.hh					\
+  %D%/cpu.hh %D%/cpu.cc				\
+  %D%/cpu-limits.hh				\
+  %D%/assembly.hh %D%/assembly.cc		\
+  %D%/codegen.hh %D%/codegen.hxx %D%/codegen.cc	\
+  %D%/matcher.hh %D%/matcher.cc	\
+  %D%/target.hh %D%/target.cc			\
+  %D%/libtarget.hh %D%/libtarget.cc
+
+# The original Tiger runtime in C.
+dist_noinst_DATA += %D%/tiger-runtime.c
+
+EXTRA_DIST += %D%/tiger_target.i
+
+TASKS += %D%/tasks.hh %D%/tasks.cc
