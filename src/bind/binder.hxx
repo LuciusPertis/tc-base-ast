@@ -29,6 +29,18 @@ namespace bind
   /* These specializations are in bind/binder.hxx, so that derived
      visitors can use them (otherwise, they wouldn't see them).  */
 
-  // FIXME: Some code was deleted here.
+  // Insert the prototype of the function in the environment.
+  template <>
+  inline void Binder::visit_dec_header<ast::FunctionDec>(ast::FunctionDec& e)
+  {
+    // FIXME: Some code was deleted here.
+  }
+
+  // Compute the bindings of this function's body.
+  template <>
+  inline void Binder::visit_dec_body<ast::FunctionDec>(ast::FunctionDec& e)
+  {
+    // FIXME: Some code was deleted here.
+  }
 
 } // namespace bind

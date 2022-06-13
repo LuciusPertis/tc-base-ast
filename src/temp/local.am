@@ -10,6 +10,4 @@ src_libtc_la_SOURCES +=				\
 check_PROGRAMS += %D%/test-temp
 %C%_test_temp_LDADD = src/libtc.la
 
-EXTRA_DIST += %D%/tiger_temp.i
-
 TASKS += %D%/tasks.hh %D%/tasks.cc

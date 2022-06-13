@@ -99,8 +99,11 @@ namespace ast
      ** \} */
   public:
     /// Checks whether the container is empty.
+#ifdef SWIG
+    constexpr bool empty() const noexcept;
+#else  /* SWIG */
     [[nodiscard]] constexpr bool empty() const noexcept;
-
+#endif /* SWIG */
     /** \name Modifiers.
      ** \{ */
   public:

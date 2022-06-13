@@ -12,6 +12,7 @@
 
 namespace target::ia32
 {
+
   /// An IA-32 Target is the union of an IA-32 Cpu and an IA-32 Codegen.
   class Target : public target::Target
   {

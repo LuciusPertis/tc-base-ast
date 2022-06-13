@@ -77,11 +77,12 @@ namespace ast
   /// Shorthand for a const visitor.
   using ObjectConstVisitor = GenObjectVisitor<misc::constify_traits>;
   /// Shorthand for a non const visitor.
-#ifdef SWIG
-  %template() GenVisitor<misc::id_traits>;
-  %template() GenObjectVisitor<misc::id_traits>;
-#endif
   using ObjectVisitor = GenObjectVisitor<misc::id_traits>;
+
+#ifdef SWIG
+  %template(ObjectConstVisitor) GenObjectVisitor<misc::constify_traits>;
+  %template(ObjectVisitor) GenObjectVisitor<misc::id_traits>;
+#endif
 
 } // namespace ast
 

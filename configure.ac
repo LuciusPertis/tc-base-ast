@@ -12,7 +12,7 @@ AC_PREREQ([2.64])
 ## Package set up.  ##
 ## ---------------- ##
 
-AC_INIT([LRDE Tiger Compiler], [1.91.h], [tiger@lrde.epita.fr], [tc],
+AC_INIT([LRDE Tiger Compiler], [1.91.i], [tiger@lrde.epita.fr], [tc],
         [http://tiger.lrde.epita.fr])
 
 # Auxiliary files.
@@ -259,8 +259,13 @@ BOOST_SYSTEM
 AM_CONDITIONAL([DARWIN], [echo "$host_os" | grep -q '^darwin'])
 TC_WITH_TCSH([with_tcsh=yes], [with_tcsh=no])
 AM_CONDITIONAL([ENABLE_TCSH], [test x$with_tcsh = xyes])
+if test x$with_tcsh = xyes; then
+  AC_DEFINE([WITH_SWIG], [1], [Define if building with swig.])
+else
+  AC_DEFINE([WITH_SWIG], [0], [Define if building with swig.])
+fi
 
-AC_CONFIG_FILES([tcsh/Makefile])
+AC_CONFIG_FILES([tcsh/Makefile tcsh/python/Makefile])
 AC_CONFIG_FILES([doc/Doxyfile])
 AX_CONFIG_SCRIPTS([tcsh/run])
 

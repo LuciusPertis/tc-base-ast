@@ -30,4 +30,5 @@ namespace target::mips
   const SpimCodegen& Target::codegen_get() const { return codegen_; }
 
   SpimCodegen& Target::codegen_get() { return codegen_; }
+
 } // namespace target::mips

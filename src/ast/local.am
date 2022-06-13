@@ -3,8 +3,6 @@ ast_srcdir = $(srcdir)/%D%
 # Don't use ast_srcdir in the include, otherwise Automake can't resolve it.
 include $(srcdir)/%D%/ast-nodes.mk
 
-EXTRA_DIST += %D%/tiger_ast.i
-
 
 src_libtc_la_SOURCES +=					\
   %D%/location.hh					\

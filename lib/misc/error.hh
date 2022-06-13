@@ -14,6 +14,14 @@
 #define ice_on_error_here() ice_on_error(__FILE__, __LINE__)
 /// \}
 
+#ifndef TC_NORETURN
+#  ifdef SWIG
+#    define TC_NORETURN
+#  else
+#    define TC_NORETURN [[noreturn]]
+#  endif
+#endif
+
 namespace misc
 {
   /** \brief Handle errors in the whole project.
@@ -83,7 +91,7 @@ namespace misc
     /// \{
 
     /// Throw an exception to exit.
-    [[noreturn]] void exit() const;
+    TC_NORETURN void exit() const;
 
     /// If the error status is set, throw an exception to exit.
     void exit_on_error() const;

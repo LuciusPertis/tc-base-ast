@@ -19,7 +19,7 @@ namespace assem
     virtual ~Fragments();
 
     /// \brief Issue the \a fragments on \a ostr.
-    std::ostream& print(std::ostream& ostr);
+    std::ostream& print(std::ostream& ostr) const;
   };
 
   std::ostream& operator<<(std::ostream& ostr, const Fragments& fragments);

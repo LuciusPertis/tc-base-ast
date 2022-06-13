@@ -1,5 +1,4 @@
 ## bind module.
-EXTRA_DIST += %D%/tiger_bind.i
 
 src_libtc_la_SOURCES +=					\
   %D%/binder.hh %D%/binder.hxx %D%/binder.cc		\

@@ -7,9 +7,7 @@
 
 #include <ast/fwd.hh>
 #include <misc/error.hh>
-#include <misc/map.hh>
-#include <misc/symbol.hh>
-#include <type/class.hh>
+#include <object/fwd.hh>
 
 namespace object
 {
@@ -33,9 +31,6 @@ namespace object
   /*------------------.
   | Desugar objects.  |
   `------------------*/
-
-  /// Names associated to class types.
-  using class_names_type = misc::map<const type::Class*, misc::symbol>;
 
   /// Rename the variables of an AST so that they each have a unique
   /// name, with support for objects.
@@ -73,3 +68,5 @@ namespace object
   A* raw_desugar(const A& tree, const class_names_type& class_names);
 
 } // namespace object
+
+#include <object/libobject.hxx>

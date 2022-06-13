@@ -26,4 +26,5 @@ namespace target::arm
   const ArmCodegen& Target::codegen_get() const { return codegen_; }
 
   ArmCodegen& Target::codegen_get() { return codegen_; }
+
 } // namespace target::arm

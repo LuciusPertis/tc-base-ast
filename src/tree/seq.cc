@@ -36,6 +36,7 @@ namespace tree
     for_each_child([&](const rTree& child) { child->parent_set(this); });
   }
 
+#ifndef SWIG
   Seq::Seq(std::initializer_list<rStm> l)
     : Stm()
     , children_()
@@ -45,6 +46,7 @@ namespace tree
 
     for_each_child([&](const rTree& child) { child->parent_set(this); });
   }
+#endif /* ! SWIG */
 
   std::ostream& Seq::tag_print(std::ostream&) const { unreachable(); }
 

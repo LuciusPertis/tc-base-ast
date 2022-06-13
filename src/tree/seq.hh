@@ -26,8 +26,10 @@ namespace tree
     /// Construct a statement list of one statement, \a left.
     Seq(const rStm& left);
 
+#ifndef SWIG
     /// Construct from an initializer list of statements, \a l.
     Seq(std::initializer_list<rStm> l);
+#endif /* ! SWIG */
 
     /// Construct an empty statement list.
     Seq() = default;

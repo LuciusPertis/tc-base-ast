@@ -8,7 +8,7 @@
 #include <map>
 
 #include <bind/renamer.hh>
-#include <object/libobject.hh>
+#include <object/fwd.hh>
 
 namespace object
 {

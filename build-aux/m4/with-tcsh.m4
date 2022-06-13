@@ -17,9 +17,12 @@ case $with_swig:$enable_shared in
   AC_MSG_NOTICE([SWIG use disabled: dynamic libraries disabled])
   with_swig=no
   ;;
+  yes:no)
+  AC_MSG_ERROR([shared libraries need to be enabled for SWIG])
+  ;;
 esac
 
-if test x$with_swig != xno; then
+if test x$with_swig = xyes; then
   tc_has_swig=yes
   AM_PATH_PYTHON([2.3])
   adl_CHECK_PYTHON
@@ -43,50 +46,14 @@ if test x$with_swig != xno; then
 
   CPPFLAGS=$save_CPPFLAGS
 
-  # Check for ruby.
-  AC_CHECK_PROGS([RUBY], [ruby], [$am_aux_dir/missing ruby])
-  if test "x$RUBY" = "x$am_aux_dir/missing ruby"; then
-    AC_MSG_ERROR([no suitable Ruby interpreter found])
-  fi
-
-  AC_ARG_VAR([RUBY_CPPFLAGS], [Path to ruby.h])
-  AC_ARG_WITH([ruby-includedir], [Include path for ruby.h],
-              [RUBY_CPPFLAGS="-I$withval"],
-              # Check paths using modern techniques (using `Rbconfig').
-              # If it does not work, resort to the old method
-              # (inspecting `$:').
-              [ruby_config_rubyhdrdir=`$RUBY -rrbconfig \
-                 -e "puts(RbConfig::CONFIG[['rubyhdrdir']] || '')"`
-               ruby_config_arch=`$RUBY -rrbconfig \
-                 -e "puts(RbConfig::CONFIG[['arch']] || '')"`
-               if test -n "$ruby_config_rubyhdrdir" \
-                    && test -n "$ruby_config_arch"; then
-                 RUBY_CPPFLAGS="-I${ruby_config_rubyhdrdir}"
-                 RUBY_CPPFLAGS="$RUBY_CPPFLAGS -I${ruby_config_rubyhdrdir}/${ruby_config_arch}"
-               else
-                 RUBY_CPPFLAGS="-I`$RUBY -e 'puts $:.join("\n")' | \
-                 while read line
-                   do
-                   if [[ -f ${line}/ruby.h ]]; then
-                     echo $line
-                   fi
-                 done`"
-               fi])
-  save_CPPFLAGS=$CPPFLAGS
-  CPPFLAGS="$CPPFLAGS $RUBY_CPPFLAGS"
-  AC_CHECK_HEADERS([ruby.h], [],
-    [AC_MSG_ERROR(
-            [You need Ruby development files to compile the Ruby interface.])])
-  CPPFLAGS=$save_CPPFLAGS
-
-  AC_PROG_SWIG([2.0])
+  AC_PROG_SWIG([4.0])
   if (eval "$SWIG -version") >/dev/null 2>&1; then :; else
     tc_has_swig=no
   fi
 
   case $with_swig:$tc_has_swig in
     yes:no)
-      AC_MSG_ERROR([SWIG 2.0 is required.
+      AC_MSG_ERROR([SWIG 4.0 is required.
                     Use `--without-swig' to disable SWIG modules.]);;
   esac
 fi

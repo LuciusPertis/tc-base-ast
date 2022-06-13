@@ -7,6 +7,4 @@ src_libtc_la_SOURCES +=						\
   %D%/traces.hh %D%/traces.cc					\
   %D%/libcanon.cc %D%/libcanon.hh
 
-EXTRA_DIST += %D%/tiger_canon.i
-
 TASKS += %D%/tasks.hh %D%/tasks.cc

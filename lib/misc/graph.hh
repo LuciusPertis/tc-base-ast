@@ -184,6 +184,7 @@ namespace misc
     /// \{
   public:
     std::vector<vertex_descriptor> topological_sort() const;
+    // FIXME: Some code was deleted here (You might want additional methods).
     /// \}
   };
 

@@ -8,6 +8,4 @@ src_libtc_la_SOURCES +=				\
   %D%/translator.hh %D%/translator.cc		\
   %D%/libtranslate.cc %D%/libtranslate.hh
 
-EXTRA_DIST += %D%/tiger_translate.i
-
 TASKS += %D%/tasks.hh %D%/tasks.cc

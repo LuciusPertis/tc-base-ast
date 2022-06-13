@@ -37,21 +37,16 @@ modpath='.libs:@abs_top_builddir@/src/.libs'
 # issues with Python 2.6.
 pypath='@abs_builddir@/python:@abs_builddir@/python/.libs:@abs_srcdir@/python':"$PYTHONPATH"
 
-# Likewise for Ruby: as some of our SWIG interfaces import other SWIG
-# interfaces (with the `%import' keyword), we must add the `.libs'
-# directory to SWILENA_RUBY_PATH so that the Ruby interpreter can load
-# the corresponding dynamic module(s) (SWIG's `%import' statements
-# generate code in dynamic modules that bypass Ruby's `Kernel.require'
-# mechanism).
-rbpath='@abs_builddir@/ruby:@abs_builddir@/ruby/.libs:@abs_srcdir@/ruby'
-
 case $1 in
+  export)
+    # use export to get variables
+    echo "PYTHONPATH='$pypath' DYLD_LIBRARY_PATH='$modpath'";;
   *.py)
     PYTHONPATH=$pypath DYLD_LIBRARY_PATH=$modpath exec @PYTHON@ "$@";;
-  *.rb)
-    TCSH_RUBY_PATH=$rbpath DYLD_LIBRARY_PATH=$modpath exec @RUBY@ "$@";;
   *.test)
     exec sh -x "$@";;
+  *.ipynb)
+    PYTHONPATH=$pypath DYLD_LIBRARY_PATH=$modpath exec @abs_srcdir@/python/tests/ipynbtest.py "$@";;
   *)
     echo "Unknown extension" >&2
     exit 2;;

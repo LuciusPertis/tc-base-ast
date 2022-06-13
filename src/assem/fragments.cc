@@ -14,7 +14,7 @@ namespace assem
 {
   Fragments::~Fragments() { misc::deep_clear(*this); }
 
-  std::ostream& Fragments::print(std::ostream& ostr)
+  std::ostream& Fragments::print(std::ostream& ostr) const
   {
     ostr << "# == Final assembler ouput. == #\n";
 
@@ -25,6 +25,11 @@ namespace assem
       }
     ostr << std::flush;
     return ostr;
+  }
+
+  std::ostream& operator<<(std::ostream& o, const Fragments& f)
+  {
+    return f.print(o);
   }
 
 } // namespace assem

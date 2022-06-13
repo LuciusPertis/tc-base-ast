@@ -16,6 +16,4 @@ src_libtc_la_SOURCES +=				\
 # The original Tiger runtime in C.
 dist_noinst_DATA += %D%/tiger-runtime.c
 
-EXTRA_DIST += %D%/tiger_target.i
-
 TASKS += %D%/tasks.hh %D%/tasks.cc

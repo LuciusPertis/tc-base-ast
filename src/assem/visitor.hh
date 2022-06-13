@@ -39,6 +39,12 @@ namespace assem
   /// Read-write visitor.
   using Visitor = GenVisitor<misc::id_traits>;
 
+#ifdef SWIG
+  /// Shorthand for a const visitor.
+  %template(GenConstVisitor) GenVisitor<misc::constify_traits>;
+  /// Shorthand for a non const visitor.
+  %template(GenVisitor) GenVisitor<misc::id_traits>;
+#endif
 } // namespace assem
 
 #include <assem/visitor.hxx>

@@ -138,12 +138,14 @@ namespace ast
   /// Shorthand for a const visitor.
   using DefaultConstVisitor = GenDefaultVisitor<misc::constify_traits>;
   /// Shorthand for a non const visitor.
-#ifdef SWIG
-  %template() GenVisitor<misc::id_traits>;
-  %template() GenDefaultVisitor<misc::id_traits>;
-#endif
   using DefaultVisitor = GenDefaultVisitor<misc::id_traits>;
 
+#ifdef SWIG
+  /// Shorthand for a const visitor.
+  %template(DefaultConstVisitor) GenDefaultVisitor<misc::constify_traits>;
+  /// Shorthand for a non const visitor.
+  %template(DefaultVisitor) GenDefaultVisitor<misc::id_traits>;
+#endif
 } // namespace ast
 
 #include <ast/default-visitor.hxx>

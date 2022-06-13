@@ -6,7 +6,7 @@
 #pragma once
 
 #include <astclone/cloner.hh>
-#include <object/libobject.hh>
+#include <object/fwd.hh>
 #include <parse/tweast.hh>
 
 namespace object

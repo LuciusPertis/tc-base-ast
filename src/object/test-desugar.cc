@@ -12,7 +12,7 @@
 #include <parse/libparse.hh>
 #include <type/libtype.hh>
 
-static void desugar(const std::string& s)
+static void test_desugar(const std::string& s)
 {
   // Parse, bind and type-check the input.
   ast::Ast* tree = nullptr;
@@ -61,53 +61,53 @@ const char* program_name = "test-desugar";
 int main()
 {
   std::cout << "/* Test 1.  */\n";
-  desugar(" let"
-          "   type A = class"
-          "   {"
-          "     var s := \"Hello\""
-          "     method m() = ()"
-          "   }"
-          "   "
-          "   var a : A := new A"
-          " in"
-          "   a.s;"
-          "   a.m()"
-          " end");
+  test_desugar(" let"
+               "   type A = class"
+               "   {"
+               "     var s := \"Hello\""
+               "     method m() = ()"
+               "   }"
+               "   "
+               "   var a : A := new A"
+               " in"
+               "   a.s;"
+               "   a.m()"
+               " end");
   std::cout << "\n\n"
             << "/* Test 2.  */\n";
-  desugar(" let"
-          "   primitive print(s : string)"
-          "   "
-          "   class A"
-          "   {"
-          "     var s := \"Hello\""
-          "     method m() = (print(self.s); print(\"\\n\"))"
-          "   }"
-          "   class B extends A"
-          "   {"
-          "     var s2 := \" World!\""
-          "     method m() = (print(self.s); print(self.s2);"
-          "                    print(\"\\n\"))"
-          "   }"
-          "   "
-          "   var b : B := new B"
-          "   var a : A := b"
-          "   var a2 : A := new B"
-          " in"
-          "   b.m();"
-          "   a.m();"
-          "   a2.m();"
-          "   a := a2;"
-          "   a := b"
-          " end");
+  test_desugar(" let"
+               "   primitive print(s : string)"
+               "   "
+               "   class A"
+               "   {"
+               "     var s := \"Hello\""
+               "     method m() = (print(self.s); print(\"\\n\"))"
+               "   }"
+               "   class B extends A"
+               "   {"
+               "     var s2 := \" World!\""
+               "     method m() = (print(self.s); print(self.s2);"
+               "                    print(\"\\n\"))"
+               "   }"
+               "   "
+               "   var b : B := new B"
+               "   var a : A := b"
+               "   var a2 : A := new B"
+               " in"
+               "   b.m();"
+               "   a.m();"
+               "   a2.m();"
+               "   a := a2;"
+               "   a := b"
+               " end");
   std::cout << "\n\n"
             << "/* Test 3.  */\n";
-  desugar(" let"
-          "   class A {}"
-          "   class B extends A {}"
-          "   function id(a : A) : A = a"
-          "   var b := new B"
-          "   var a := id(b)"
-          " in"
-          " end");
+  test_desugar(" let"
+               "   class A {}"
+               "   class B extends A {}"
+               "   function id(a : A) : A = a"
+               "   var b := new B"
+               "   var a := id(b)"
+               " in"
+               " end");
 }

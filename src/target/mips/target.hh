@@ -12,6 +12,7 @@
 
 namespace target::mips
 {
+
   /// A MIPS Target is the union of a MIPS Cpu and a MIPS Codegen.
   class Target : public target::Target
   {

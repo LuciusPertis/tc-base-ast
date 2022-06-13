@@ -29,4 +29,5 @@ namespace target::ia32
   const GasCodegen& Target::codegen_get() const { return codegen_; }
 
   GasCodegen& Target::codegen_get() { return codegen_; }
+
 } // namespace target::ia32

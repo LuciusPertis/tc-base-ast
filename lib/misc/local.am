@@ -1,7 +1,6 @@
 ## --------- ##
 ## libmisc.  ##
 ## --------- ##
-EXTRA_DIST += %D%/tiger_misc.i
 
 noinst_LTLIBRARIES = %D%/libmisc.la
 %C%_libmisc_la_SOURCES =                                        \

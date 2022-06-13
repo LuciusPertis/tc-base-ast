@@ -20,10 +20,25 @@ namespace type
     , type_(type)
   {}
 
-  // FIXME: Some code was deleted here (Inherited functions).
+  // Inherited functions
+  void Named::accept(ConstVisitor& v) const
+  {
+    // FIXME: Some code was deleted here.
+  }
 
-  // FIXME: Some code was deleted here (Sound).
+  void Named::accept(Visitor& v)
+  {
+    // FIXME: Some code was deleted here.
+  }
 
-  // FIXME: Some code was deleted here (Special implementation of "compatible_with" for Named).
+  bool Named::sound() const
+  {
+    // FIXME: Some code was deleted here (Sound).
+  }
+
+  bool Named::compatible_with(const Type& other) const
+  {
+    // FIXME: Some code was deleted here (Special implementation of "compatible_with" for Named).
+  }
 
 } // namespace type

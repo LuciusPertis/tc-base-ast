@@ -1,5 +1,3 @@
-EXTRA_DIST += src/tiger_common.i
-
 ## ------------ ##
 ## version.cc.  ##
 ## ------------ ##
@@ -30,7 +28,7 @@ src/version.cc: src/version.stamp
 ## ------- ##
 
 lib_LTLIBRARIES = src/libtc.la
-src_libtc_la_SOURCES = src/version.hh
+src_libtc_la_SOURCES = src/version.hh src/common.cc
 nodist_src_libtc_la_SOURCES = src/version.cc
 src_libtc_la_LDFLAGS = $(BOOST_PROGRAM_OPTIONS_LDFLAGS)
 BUILT_SOURCES += $(nodist_src_libtc_la_SOURCES)
@@ -48,7 +46,7 @@ bin_PROGRAMS = src/tc
 dist_src_tc_SOURCES =				\
   src/doc.hh					\
   $(TASKS)					\
-  src/common.cc src/common.hh			\
+	src/common.hh \
   src/tc.cc
 
 src_tc_LDADD = src/libtc.la
@@ -77,6 +75,7 @@ include src/frame/local.am
 include src/translate/local.am
 include src/canon/local.am
 include src/assem/local.am
+include src/liveness/local.am
 include src/llvmtranslate/local.am
 include src/target/local.am
 include src/combine/local.am

@@ -1,7 +1,7 @@
 ## object module.
-EXTRA_DIST += %D%/tiger_object.i
 
-src_libtc_la_SOURCES += %D%/libobject.hh %D%/libobject.cc
+src_libtc_la_SOURCES += %D%/libobject.hh %D%/libobject.cc %D%/libobject.hxx \
+						%D%/fwd.hh
 
 src_libtc_la_SOURCES += %D%/binder.hh %D%/binder.cc
 

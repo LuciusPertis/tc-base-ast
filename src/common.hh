@@ -12,6 +12,7 @@
 #include <misc/error.hh>
 #include <misc/timer.hh>
 
+// FIXME: Some code was deleted here.
 /// \name Program identity.
 /// \{
 /// Name of this program.

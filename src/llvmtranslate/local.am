@@ -42,7 +42,6 @@ src_libtc_la_SOURCES +=					\
 nodist_src_libtc_la_SOURCES += %D%/runtime.cc
 
 ## FIXME: Add SWIG support for this module
-## EXTRA_DIST += %D%/tiger_llvmtranslate.i
 
 ## LLVM flags are found using `llvm-config`.
 

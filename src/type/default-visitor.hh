@@ -54,6 +54,12 @@ namespace type
   /// Shorthand for a non const visitor.
   using DefaultVisitor = GenDefaultVisitor<misc::id_traits>;
 
+#ifdef SWIG
+  /// Shorthand for a const visitor.
+  %template(DefaultConstVisitor) GenDefaultVisitor<misc::constify_traits>;
+  /// Shorthand for a non const visitor.
+  %template(DefaultVisitor) GenDefaultVisitor<misc::id_traits>;
+#endif
 } // namespace type
 
 #include <type/default-visitor.hxx>

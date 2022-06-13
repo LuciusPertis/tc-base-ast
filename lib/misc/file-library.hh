@@ -90,9 +90,6 @@ namespace misc
 
   std::ostream& operator<<(std::ostream& ostr, const file_library& l);
 
-  std::filesystem::path operator+(std::filesystem::path& p1,
-                                  std::filesystem::path& p2);
-
 } // namespace misc
 
 #include <misc/file-library.hxx>

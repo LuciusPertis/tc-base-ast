@@ -1,8 +1,10 @@
 
 Number of suppressed lines, suppressed chunks, average chunks size:
-.                             : 6044 490  12
-    lib                       :  255  16  15
-        misc                  :  255  16  15
+.                             : 6165 500  12
+    lib                       :  275  19  14
+        misc                  :  275  19  14
+            graph.hh          :    3   1   3
+            graph.hxx         :   17   2   8
             scoped-map.hh     :   65   2  32
             scoped-map.hxx    :  152   1 152
             singleton.hh      :   16   1  16
@@ -11,7 +13,7 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             unique.hxx        :    8   5   1
             variant.hh        :    6   1   6
             variant.hxx       :    1   1   1
-    src                       : 5789 474  12
+    src                       : 5890 481  12
         ast                   : 1433  98  14
             array-exp.cc      :   20   1  20
             array-exp.hh      :   42   1  42
@@ -70,10 +72,10 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             type-constructor.hxx:   11   1  11
         astclone              :   53  17   3
             cloner.cc         :   53  17   3
-        bind                  :  398  24  16
+        bind                  :  387  25  15
             binder.cc         :  154   9  17
             binder.hh         :   37   3  12
-            binder.hxx        :   49   3  16
+            binder.hxx        :   38   4   9
             libbind.cc        :   14   1  14
             libbind.hh        :   15   1  15
             renamer.cc        :   19   1  19
@@ -96,11 +98,12 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             tasks.cc          :    4   1   4
             type-checker.cc   :   14   1  14
             type-checker.hh   :   26   1  26
+        common.hh             :    9   1   9
         desugar               :  208   5  41
             bounds-checking-visitor.cc:  131   1 131
             bounds-checking-visitor.hh:    7   1   7
             desugar-visitor.cc:   69   2  34
-            libdesugar.cc     :    1   1   1
+            libdesugar.hxx    :    1   1   1
         escapes               :   44   2  22
             escapes-visitor.cc:   31   1  31
             escapes-visitor.hh:   13   1  13
@@ -109,6 +112,10 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             inliner.hh        :    1   1   1
             pruner.cc         :   77   1  77
             pruner.hh         :    9   1   9
+        liveness              :  110   4  27
+            flowgraph.hxx     :   32   2  16
+            interference-graph.cc:   43   1  43
+            liveness.cc       :   35   1  35
         llvmtranslate         :  250  41   6
             escapes-collector.cc:   39   8   4
             llvm-type-visitor.cc:    5   4   1
@@ -158,7 +165,7 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             translator.cc     :  105  19   5
         tree                  :   43   1  43
             fragment.cc       :   43   1  43
-        type                  :  748  68  11
+        type                  :  741  69  10
             array.cc          :    7   1   7
             array.hh          :   23   1  23
             array.hxx         :    1   1   1
@@ -173,7 +180,7 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             method.cc         :   10   1  10
             method.hh         :    1   1   1
             method.hxx        :    1   1   1
-            named.cc          :   23   3   7
+            named.cc          :   16   4   4
             named.hxx         :    2   1   2
             nil.cc            :    2   1   2
             pretty-printer.cc :   52   7   7

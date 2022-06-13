@@ -1,7 +1,5 @@
 ## module callgraph.
 
-EXTRA_DIST += %D%/tiger_callgraph.i
-
 # Compiling.
 # Libcallgraph
 src_libtc_la_SOURCES +=					\

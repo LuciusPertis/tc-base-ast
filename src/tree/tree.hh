@@ -47,8 +47,6 @@ namespace tree
     void reducible_set(bool b);
 
   protected:
-    friend std::ostream& operator<<(std::ostream& ostr, const Tree& tree);
-
     /// The Tree instruction this is a child from.
     Tree* parent_ = nullptr;
     /// The Temp for asm output.

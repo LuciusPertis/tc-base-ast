@@ -158,16 +158,16 @@ EOF
 fi
 
 # Swig makefiles.
-# if test -d tcsh; then
-#   here=$(pwd)
-#   cd tcsh
-#   for i in python ruby
-#   do
-#     rm -f $i/swig.mk
-#     top_srcdir=.. ./generate-swig-mk $i $i/swig.mk
-#   done
-#   cd $here
-# fi
+if test -d tcsh; then
+  here=$(pwd)
+  cd tcsh
+  for i in python
+  do
+    rm -f $i/swig.mk
+    top_srcdir=.. ./generate-swig-mk $i $i/swig.mk
+  done
+  cd $here
+fi
 
 # Requirements over bootstrap tools.
 require autoconf 2.64

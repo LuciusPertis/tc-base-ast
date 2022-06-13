@@ -1,5 +1,5 @@
 ## type module.
-EXTRA_DIST += %D%/README.txt %D%/tiger_type.i
+EXTRA_DIST += %D%/README.txt
 
 src_libtc_la_SOURCES +=						\
   %D%/fwd.hh %D%/types.hh					\

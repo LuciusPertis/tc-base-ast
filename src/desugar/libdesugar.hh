@@ -81,3 +81,5 @@ namespace desugar
   template <typename A> A* raw_bounds_checks_add(const A& tree);
 
 } // namespace desugar
+
+#include <desugar/libdesugar.hxx>

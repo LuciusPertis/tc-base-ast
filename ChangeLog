@@ -1,3 +1,897 @@
+2022-06-06  adrien.houpert  <adrien.houpert@epita.fr>
+
+	tcsh: clang-format for ti.py * tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: remove CastVar
+
+	* tcsh/python/tests/ast.ipynb,
+	* tcsh/src/swig_real_type.hh,
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: better error checks on ti.py arguments
+
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add objects support
+
+	* tcsh/python/tests/assem.ipynb,
+	* tcsh/python/tests/ast.ipynb,
+	* tcsh/python/tests/astclone.ipynb,
+	* tcsh/python/tests/bind.ipynb,
+	* tcsh/python/tests/canon.ipynb,
+	* tcsh/python/tests/combine.ipynb,
+	* tcsh/python/tests/desugar.ipynb,
+	* tcsh/python/tests/escapes.ipynb,
+	* tcsh/python/tests/misc.ipynb,
+	* tcsh/python/tests/object.ipynb,
+	* tcsh/python/tests/overload.ipynb,
+	* tcsh/python/tests/regalloc.ipynb,
+	* tcsh/python/tests/target.ipynb,
+	* tcsh/python/tests/temp.ipynb,
+	* tcsh/python/tests/ti.ipynb,
+	* tcsh/python/tests/translate.ipynb,
+	* tcsh/python/tests/tree.ipynb,
+	* tcsh/python/tests/type.ipynb,
+	* tcsh/python/ti.py,
+	* tcsh/src/tiger_object.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	object: create libobject.hxx to store templated functions
+
+	* dev/stagize_conf.yml,
+	* src/object/desugar-visitor.hh,
+	* src/object/fwd.hh,
+	* src/object/libobject.cc,
+	* src/object/libobject.hh,
+	* src/object/libobject.hxx,
+	* src/object/local.am,
+	* src/object/renamer.hh,
+	* src/object/test-desugar.cc: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: format swig code to lrde
+
+	* tcsh/src/helper.hh,
+	* tcsh/src/tiger_assem.i,
+	* tcsh/src/tiger_ast.i,
+	* tcsh/src/tiger_astclone.i,
+	* tcsh/src/tiger_bind.i,
+	* tcsh/src/tiger_common.i,
+	* tcsh/src/tiger_desugar.i,
+	* tcsh/src/tiger_frame.i,
+	* tcsh/src/tiger_misc.i,
+	* tcsh/src/tiger_object.i,
+	* tcsh/src/tiger_parse.i,
+	* tcsh/src/tiger_target.i,
+	* tcsh/src/tiger_temp.i,
+	* tcsh/src/tiger_tree.i,
+	* tcsh/src/tiger_type.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ti: change default backend to mips
+
+	* tcsh/python/tc.py,
+	* tcsh/python/tests/assem.ipynb,
+	* tcsh/python/tests/regalloc.ipynb,
+	* tcsh/python/tests/ti.ipynb,
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: pass distdir on TC2
+
+	* dev/stagize_conf.yml,
+	* tcsh/python/tests/ast.ipynb,
+	* tcsh/python/tests/object.ipynb,
+	* tcsh/python/tests/ti.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: stagize remove tests files
+
+	* dev/stagize.py,
+	* tcsh/example.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add all regalloc tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tests/regalloc.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add all liveness tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tests/liveness.ipynb,
+	* tcsh/src/tiger_liveness.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add timer in misc and add #DONTCHECK cell
+
+	* tcsh/python/tests/ipynbtest.py,
+	* tcsh/python/tests/misc.ipynb,
+	* tcsh/src/tiger_misc.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add all TC7 tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tests/assem.ipynb,
+	* tcsh/python/tests/target.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: assem Instr real type and import classes
+
+	* tcsh/src/helper.hh,
+	* tcsh/src/tiger_assem.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add all canon tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tests/canon.ipynb,
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add all TC5 tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tests/temp.ipynb,
+	* tcsh/python/tests/translate.ipynb,
+	* tcsh/python/tests/tree.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add llvmtranslate tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tc.py,
+	* tcsh/python/tests/llvmtranslate.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add all TC4 tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tests/astclone.ipynb,
+	* tcsh/python/tests/combine.ipynb,
+	* tcsh/python/tests/desugar.ipynb,
+	* tcsh/python/tests/overload.ipynb,
+	* tcsh/python/tests/type.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: combine and overload with std::pair
+
+	* tcsh/src/tiger_combine.i,
+	* tcsh/src/tiger_overload.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: __str__ on type::Type and type visitor
+
+	* tcsh/src/tiger_ast.i,
+	* tcsh/src/tiger_type.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add all TC3 tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tests/bind.ipynb,
+	* tcsh/python/tests/escapes.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: change include to import on tiger modules
+
+	* tcsh/python/tests/ipynbtest.py,
+	* tcsh/python/tests/parse.ipynb,
+	* tcsh/src/tiger_ast.i,
+	* tcsh/src/tiger_bind.i,
+	* tcsh/src/tiger_parse.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add ast tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tests/ast.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add all TC1 tests
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tests/common.ipynb,
+	* tcsh/python/tests/object.ipynb,
+	* tcsh/python/tests/parse.ipynb,
+	* tcsh/python/tests/ti.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: add ipynb in testsuite
+
+	* .gitignore,
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tc.py,
+	* tcsh/run.in: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh/ipynbtest: Create Jupyter test suite, adapted from spot
+
+	* tcsh/python/tests/ipynbtest.py,
+	* tcsh/python/tests/misc.ipynb,
+	* tcsh/python/tests/tc.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: typed python scripts
+
+	* tcsh/python/tc.py,
+	* tcsh/python/ti.py,
+	* tcsh/src/tiger_misc.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	notebook: add optional backend parameter
+
+	* dev/stagize.py,
+	* dev/stagize_conf.yml,
+	* tcsh/python/tc.py,
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add tiger_frame module
+
+	* tcsh/src/tiger_frame.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add all tree::Tree sub types
+
+	* tcsh/src/tiger_tree.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add regex to replace name of tmp file
+
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: remove some ast warnings
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: __str__ on temp::Temp and temp::Label
+
+	* tcsh/src/tiger_temp.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: tiger_misc refacto misc error tuple
+
+	* tcsh/src/tiger_misc.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: undef HELPER macros * tcsh/src/swig_real_type.hh, * tcsh/src/tiger_assem.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: use python3 with swig * tcsh/python/Makefile.am, * tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add debug flag in Tiger Interpreter
+
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tree: remove friend operator<< function in tree::Tree
+
+	* src/tree/tree.hh: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: hide initializer_list in tree::Seq
+
+	* src/tree/seq.cc, src/tree/seq.hh: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: astclone, use %inline keyword
+
+	* tcsh/src/tiger_astclone.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add desugar module
+
+	* tcsh/python/tc.py,
+	* tcsh/python/ti.py,
+	* tcsh/src/tiger_desugar.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	desugar: rename libdesugar.cc to libdesugar.hxx
+
+	* src/desugar/libdesugar.hh,
+	* src/desugar/local.am,
+	* src/desugar/libdesugar.cc -> src/desugar/libdesugar.hxx: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: configure.ac use dnl to stadgize
+
+	* configure.ac: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add get on all backend
+
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add llvmtranslate module
+
+	* tcsh/python/tc.py,
+	* tcsh/python/ti.py,
+	* tcsh/src/tiger_llvmtranslate.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: create astclone with clone function
+
+	* tcsh/python/tc.py,
+	* tcsh/src/tiger_astclone.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: export SwigAstTypeVisitor from tiger_ast
+
+	* tcsh/src/swig_real_type.hh,
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: define functions or method declared
+
+	* src/ast/ast.yml,
+	* src/ast/chunk.hh,
+	* src/ast/op-exp.cc,
+	* src/bind/binder.hxx,
+	* src/type/named.cc: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: stadgize tiger_ast.i
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: remove old test, now use ti
+
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tcsh-mips.test,
+	* tcsh/python/tcsh-tree.test: Here.
+	* tcsh/python/tcsh.test,
+	* tcsh/python/test-compiler.py,
+	* tcsh/python/test-front-end.py: Deleted.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add tcsh/src in EXTRA_DIST
+
+	* tcsh/Makefile.am: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: stadgize python ti and tc module
+
+	* tcsh/python/tc.py,
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	notebook: dot_dump example in notebook
+
+	* tcsh/example.ipynb,
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: CallbackVisitor pass ast in dictionary
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: delete tcsh/ruby and dependency
+
+	* .gitignore,
+	* bootstrap,
+	* build-aux/m4/with-tcsh.m4,
+	* configure.ac,
+	* dev/stats.sh,
+	* tcsh/Makefile.am,
+	* tcsh/generate-swig-mk,
+	* tcsh/run.in: Here.
+	* tcsh/ruby/Makefile.am,
+	* tcsh/ruby/ltrequire.rb,
+	* tcsh/ruby/tc.rb,
+	* tcsh/ruby/tcsh.test,
+	* tcsh/ruby/test-compiler.rb,
+	* tcsh/ruby/test-front-end.rb: Deleted.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: import tiger_assem.i in tiger_target.i
+
+	* tcsh/example.ipynb,
+	* tcsh/src/tiger_assem.i,
+	* tcsh/src/tiger_target.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: assem add __str__ on Fragments, Intrs and Instr
+
+	* tcsh/src/tiger_assem.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: Create a helper.hh in swig to factorise real type visitors
+
+	* tcsh/src/helper.hh,
+	* tcsh/src/tiger_assem.i,
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add three python method to OpExp
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: tiger_ast refacto codding style
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: use swig %apply to remove duplicated lines and add rvalues
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	notebook: adapt %%tiger example to use TiExecutor
+
+	* tcsh/example.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: create TiExecutor class with step processing
+
+	* tcsh/python/tc.py,
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: swig compatibility with assem
+
+	* tcsh/src/tiger_assem.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	notebook: python notebook example and error list
+
+	* tcsh/example.ipynb: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add misc symbol as a valid swig type
+
+	* tcsh/src/tiger_misc.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: iterable ast items
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: SwigTypeVisitor, get the real type of each ast element
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: remove ast_upcast in ti for notebooks
+
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: remove some swig warnings
+
+	* src/common.hh,
+	* tcsh/src/tiger_common.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: parse ast in notebook without exit on error
+
+	* tcsh/python/tc.py,
+	* tcsh/python/ti.py,
+	* tcsh/src/tiger_bind.i,
+	* tcsh/src/tiger_misc.i,
+	* tcsh/src/tiger_parse.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: ast add tikz and normal dumper
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add option -no-pie to gcc and remove exit for tree
+
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	notebook: %%tiger need one argument to store the ast
+
+	* tcsh/python/tc.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	notebook: basic version of IPython magics
+
+	* tcsh/python/tc.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: get return value into variable in tiger interpreter
+
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: split python tiger interpreter into multiple functions with a main
+
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add tcsh/run export to get variable to set
+
+	* tcsh/run.in: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: imp module deprecated since python 3.4, now importlib
+
+	* tcsh/python/tc.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add __str__ in temp::TempMap
+
+	* src/tiger_temp.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add __str__ in target::Target and target::Cpu
+
+	* src/tiger_target.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: resolve print of fragments adding std_unique_ptr
+
+	* tcsh/src/tiger_tree.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add SWIG template to visitors
+
+	* src/assem/visitor.hh,
+	* src/ast/default-visitor.hh,
+	* src/ast/non-object-visitor.hh,
+	* src/type/default-visitor.hh,
+	* src/type/visitor.hh: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: update tiger_ast.i to remove some warnings
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: split python tcsh tests
+
+	split python/tcsh.test into:
+	* python/tcsh-mips.test, python/tcsh-tree.test, python/tcsh.test: Here.
+
+	Add new tests into make check:
+	* python/Makefile.am: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: update SWIG documentation in dev/tc.texi
+
+	* dev/tc.texi: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add combine to ti unavailable modules check
+
+	* tcsh/python/ti.py: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: change Decs to Chunk
+
+	* tcsh/src/tiger_ast.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add SWIG guards for [[nodiscard]]
+
+	* src/ast/chunk.hh: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	tcsh: add combine module to tcsh
+
+	* tcsh/python/tc.py,
+	* tcsh/src/tiger_combine.i: Here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: add support for object extension
+
+	* tcsh/src/tiger_parse.i: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: add name of declaration if ast is a Dec when calling callback
+
+	* tcsh/src/tiger_ast.i: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: move CallbackVisitor in SWIGPYTHON guard
+
+	* tcsh/Makefile.am,
+	* tcsh/src/tiger_ast.i: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	error: rename NORETURN macro to TC_NORETURN
+
+	* lib/misc/error.hh: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	error: wrap definition of NORETURN macro inside ifndef directive
+
+	* lib/misc/error.hh: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: add callback visitor for python bindings
+
+	* tcsh/Makefile.am,
+	* tcsh/src/tiger_ast.i: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: add needed includes and remove useless ones
+
+	*	tcsh/src/tiger_ast.i,
+	*	tcsh/src/tiger_bind.i,
+	*	tcsh/src/tiger_callgraph.i,
+	*	tcsh/src/tiger_escapes.i,
+	*	tcsh/src/tiger_parse.i,
+	*	tcsh/src/tiger_translate.i,
+	*	tcsh/src/tiger_tree.i: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	swig: fix the %template directives in visitor headers
+
+	* src/ast/default-visitor,
+	* src/ast/non-object-visitor,
+	* src/ast/object-visitor: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	build-aux: add error message when requesting SWIG without shared libraries
+
+	* build-aux/m4/with-tcsh.m4: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	buildfarm: add conditional TCSH_RUBY even when swig was not found
+
+	* build-aux/m4/with-tcsh.m4: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: add ruby folder in subdirs to process
+
+	* tcsh/Makefile.am: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: remove interface files from EXTRA_DIST
+
+	* lib/misc/local.am,
+	* src/ast/local.am,
+	* src/bind/local.am,
+	* src/callgraph/local.am,
+	* src/canon/local.am,
+	* src/escapes/local.am,
+	* src/liveness/local.am,
+	* src/llvmtranslate/local.am,
+	* src/object/local.am,
+	* src/overload/local.am,
+	* src/parse/local.am,
+	* src/regalloc/local.am,
+	* src/target/local.am,
+	* src/temp/local.am,
+	* src/translate/local.am,
+	* src/tree/local.am,
+	* src/type/local.am: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	bootstrap: decomment generation of swig Makefiles
+
+	* bootstrap: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: add calls to ast_upcast after parsing in python tests
+
+	* tcsh/python/test-compiler.py,
+	* tcsh/python/test-front-end.py: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: remove run from tests environment
+
+	* tcsh/python/Makefile.am,
+	* tcsh/ruby/Makefile.am: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	tcsh: remove unecessary swig double namespace declarations
+
+	* configure.ac,
+	* lib/misc/error.hh,
+	* src/local.am,
+	* src/target/arm/target.cc,
+	* src/target/arm/target.hh,
+	* src/target/ia32/target.cc,
+	* src/target/ia32/target.hh,
+	* src/target/mips/target.cc,
+	* src/target/mips/target.hh,
+	* tcsh/Makefile.am,
+	* tcsh/ruby/Makefile.am: here.
+
+2022-06-06  Louis Dufeu  <louis.dufeu@epita.fr>
+
+	build-aux: make ruby an optional dependency for tcsh
+
+	* .gitignore,
+	* build-aux/m4/with-tcsh.m4,
+	* tcsh/ruby/Makefile.am: here.
+
+2022-06-06  Loic Reyreaud  <reyrea_l@epita.fr>
+
+	tcsh: build: Updated tcsh for python3 swig3
+
+	Update old swig bindings to use swig4 / python3. Update build system to
+	build to build them. Made some modification in cpp code to allow swig to
+	parse it.
+
+	Require a custom version of swig4 to compile at the moment.
+	Moved the .i files to tcsh/src, tcsh/python hold python related code for
+	swig, tcsh/ruby will hold ruby related code for swig.
+
+	* .gitignore,
+	* build-aux/m4/pypath.m4,
+	* build-aux/m4/with-tcsh.m4,
+	* configure.ac,
+	* lib/misc/error.hh,
+	* lib/misc/file-library.hh,
+	* src/bind/tiger_bind.i,
+	* src/local.am,
+	* src/stc/local.am,
+	* src/target/arm/target.cc,
+	* src/target/arm/target.hh,
+	* src/target/ia32/target.cc,
+	* src/target/ia32/target.hh,
+	* src/target/mips/target.cc,
+	* src/target/mips/target.hh,
+	* tcsh/Makefile.am,
+	* tcsh/generate-swig-mk,
+	* tcsh/python/Makefile.am,
+	* tcsh/python/tc.py,
+	* tcsh/python/ti.py,
+	* src/ast/tiger_ast.i -> tcsh/src/tiger_ast.i,
+	* tcsh/src/tiger_bind.i,
+	* src/callgraph/tiger_callgraph.i -> tcsh/src/tiger_callgraph.i,
+	* src/canon/tiger_canon.i -> tcsh/src/tiger_canon.i,
+	* src/tiger_common.i -> tcsh/src/tiger_common.i,
+	* src/escapes/tiger_escapes.i -> tcsh/src/tiger_escapes.i,
+	* src/liveness/tiger_liveness.i -> tcsh/src/tiger_liveness.i,
+	* lib/misc/tiger_misc.i -> tcsh/src/tiger_misc.i,
+	* src/object/tiger_object.i -> tcsh/src/tiger_object.i,
+	* src/overload/tiger_overload.i -> tcsh/src/tiger_overload.i,
+	* src/parse/tiger_parse.i -> tcsh/src/tiger_parse.i,
+	* src/regalloc/tiger_regalloc.i -> tcsh/src/tiger_regalloc.i,
+	* src/target/tiger_target.i -> tcsh/src/tiger_target.i,
+	* src/temp/tiger_temp.i -> tcsh/src/tiger_temp.i,
+	* src/translate/tiger_translate.i -> tcsh/src/tiger_translate.i,
+	* src/tree/tiger_tree.i -> tcsh/src/tiger_tree.i,
+	* src/type/tiger_type.i -> tcsh/src/tiger_type.i: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	operator<<: missing operator<< for assem::Fragments
+
+	* src/assem/fragments.cc: Here.
+
+2022-06-06  Serval Martinot-Lagarde  <serval.martinot-lagarde@epita.fr>
+
+	const: add a cont to print in assem fragments
+
+	* src/assem/fragments.cc, src/assem/fragments.hh: Here.
+
+2022-06-06  adrien.houpert  <adrien.houpert@epita.fr>
+
+	pre-commit: apply pre-commit autoupdate to fix black fail * .pre-commit-config.yaml: Here.
+
+2022-05-25  Etienne Renault  <renault@lrde.epita.fr>
+
+	Version 1.91.h for 2024-tc-7.0
+
+	* .last-cl-gen, ChangeLog, NEWS.txt,
+	configure.ac: Here.
+
 2022-05-16  Etienne Renault  <renault@lrde.epita.fr>
 
 	 Version 1.91.g for 2024-tc-6.0
@@ -21127,7 +22021,7 @@
 
 2010-01-08  Roland Levillain  <roland@lrde.epita.fr>
 
-	Handle $Id: ad079543404af6f24672e98a62271b79f95a3263 $ using gitattributes.
+	Handle $Id: 6a0b825d1c3add928d1163a9b1f79d0342370317 $ using gitattributes.
 
 2010-01-08  Roland Levillain  <roland@lrde.epita.fr>
 
@@ -46199,7 +47093,7 @@
 	* src/Makefile.am: Adjust.
 	* Makefile.am (version.h): Replace with...
 	(authors.h): these.
-	* tests/tc-check.in ($revision): Use $Id: ad079543404af6f24672e98a62271b79f95a3263 $.
+	* tests/tc-check.in ($revision): Use $Id: 6a0b825d1c3add928d1163a9b1f79d0342370317 $.
 
 
 	git-svn-id: https://svn.lrde.epita.fr/svn/tc/trunk@1507 1f7e7f5b-0dda-0310-9018-85e83a419b00
