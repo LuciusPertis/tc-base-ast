@@ -1,3 +1,15 @@
+2023-03-05  Mael Cravero  <mael.cravero@epita.fr>
+
+	common.hh: remove extraneous fixme marks
+
+	* src/common.hh: here.
+
+2023-03-03  Mael Cravero  <mael.cravero@epita.fr>
+
+	stagize: do not ship generated file scantiger.hh
+
+	* dev/stagize_conf.yml: here.
+
 2023-03-02  Mael Cravero  <mael.cravero@epita.fr>
 
 	Version 1.92.a for 2025-tc-1.0
@@ -22718,7 +22730,7 @@
 
 2010-01-08  Roland Levillain  <roland@lrde.epita.fr>
 
-	Handle $Id: f9d7de194e2045dd80fec1a6a48bb062a11d18e3 $ using gitattributes.
+	Handle $Id: 50c1d379c091144c74cef8759e836188d758da26 $ using gitattributes.
 
 2010-01-08  Roland Levillain  <roland@lrde.epita.fr>
 
@@ -47790,7 +47802,7 @@
 	* src/Makefile.am: Adjust.
 	* Makefile.am (version.h): Replace with...
 	(authors.h): these.
-	* tests/tc-check.in ($revision): Use $Id: f9d7de194e2045dd80fec1a6a48bb062a11d18e3 $.
+	* tests/tc-check.in ($revision): Use $Id: 50c1d379c091144c74cef8759e836188d758da26 $.
 
 
 	git-svn-id: https://svn.lrde.epita.fr/svn/tc/trunk@1507 1f7e7f5b-0dda-0310-9018-85e83a419b00
