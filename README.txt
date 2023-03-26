@@ -1,14 +1,16 @@
 
 Number of suppressed lines, suppressed chunks, average chunks size:
-.                             : 1553 127  12
-    lib                       :   16  11   1
-        misc                  :   16  11   1
+.                             : 2322 172  13
+    lib                       :  233  14  16
+        misc                  :  233  14  16
+            scoped-map.hh     :   65   2  32
+            scoped-map.hxx    :  152   1 152
             symbol.hxx        :    6   4   1
             test-symbol.cc    :    1   1   1
             unique.hxx        :    8   5   1
             variant.hxx       :    1   1   1
-    src                       : 1537 116  13
-        ast                   : 1281  87  14
+    src                       : 2089 158  13
+        ast                   : 1343  92  14
             array-exp.cc      :   20   1  20
             array-exp.hh      :   42   1  42
             array-exp.hxx     :   34   1  34
@@ -23,6 +25,10 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             call-exp.hxx      :   34   1  34
             default-visitor.hxx:   20  11   1
             dumper-dot.cc~    :   37  28   1
+            dumper-dot.hxx    :    1   1   1
+            escapable.cc      :    1   1   1
+            escapable.hh      :   30   1  30
+            escapable.hxx     :   12   1  12
             field-var.cc      :   11   1  11
             field-var.hh      :   42   1  42
             field-var.hxx     :   34   1  34
@@ -40,7 +46,7 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             object-exp.hxx    :   12   1  12
             object-visitor.hxx:    9   5   1
             op-exp.cc         :    8   1   8
-            pretty-printer.cc :  236   2 118
+            pretty-printer.cc :  254   3  84
             pretty-printer.hh :   30   1  30
             record-exp.cc     :   18   1  18
             record-exp.hh     :   38   1  38
@@ -54,8 +60,30 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             string-exp.cc     :    8   1   8
             string-exp.hh     :   29   1  29
             string-exp.hxx    :   12   1  12
-        parse                 :  256  29   8
-            parsetiger.yy     :  210   8  26
+        bind                  :  388  26  14
+            binder.cc         :  154   9  17
+            binder.hh         :   37   3  12
+            binder.hxx        :   38   4   9
+            libbind.cc        :   14   1  14
+            libbind.hh        :   15   1  15
+            renamer.cc        :   19   1  19
+            renamer.hh        :    6   2   3
+            renamer.hxx       :   37   2  18
+            tasks.cc          :   25   1  25
+            tasks.hh          :   42   1  42
+            test-bind.cc      :    1   1   1
+        escapes               :   44   2  22
+            escapes-visitor.cc:   31   1  31
+            escapes-visitor.hh:   13   1  13
+        object                :   57   9   6
+            binder.cc         :   34   3  11
+            libobject.cc      :    7   2   3
+            libobject.hh      :    4   1   4
+            tasks.cc          :    5   1   5
+            tasks.hh          :    6   1   6
+            test-bind.cc      :    1   1   1
+        parse                 :  257  29   8
+            parsetiger.yy     :  211   8  26
             scantiger.ll      :   26   3   8
             tasks.cc          :    1   1   1
             tiger-driver.hxx  :   14  14   1
