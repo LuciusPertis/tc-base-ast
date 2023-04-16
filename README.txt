@@ -1,6 +1,6 @@
 
 Number of suppressed lines, suppressed chunks, average chunks size:
-.                             : 4135 346  11
+.                             : 4388 387  11
     lib                       :  249  15  16
         misc                  :  249  15  16
             scoped-map.hh     :   65   2  32
@@ -10,7 +10,7 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             test-symbol.cc    :    1   1   1
             unique.hxx        :    8   5   1
             variant.hxx       :    1   1   1
-    src                       : 3886 331  11
+    src                       : 4139 372  11
         ast                   : 1435  98  14
             array-exp.cc      :   20   1  20
             array-exp.hh      :   42   1  42
@@ -103,6 +103,10 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             inliner.hh        :    1   1   1
             pruner.cc         :   77   1  77
             pruner.hh         :    9   1   9
+        llvmtranslate         :  253  41   6
+            escapes-collector.cc:   39   8   4
+            llvm-type-visitor.cc:    5   4   1
+            translator.cc     :  209  29   7
         object                :  394  69   5
             binder.cc         :   34   3  11
             desugar-visitor.cc:  150  39   3

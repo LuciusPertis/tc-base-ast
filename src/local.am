@@ -69,4 +69,5 @@ include src/object/local.am
 include src/overload/local.am
 include src/desugar/local.am
 include src/inlining/local.am
+include src/llvmtranslate/local.am
 include src/combine/local.am

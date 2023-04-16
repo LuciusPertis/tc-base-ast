@@ -1,3 +1,5 @@
+Bump 1.92.e, 2023-04-16 for tc-L
+
 Bump 1.92.d, 2023-04-01 for tc-4
 
 Bump 1.92.c, 2023-03-26 for tc-3

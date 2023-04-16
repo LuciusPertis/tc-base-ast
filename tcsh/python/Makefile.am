@@ -49,6 +49,7 @@ $(srcdir)/run.stamp: $(RUN_IN)
 	$(AM_V_at)mv -f $@.tmp $@
 
 TESTS =
+TESTS += tcsh-llvm.test
 
 LOG_COMPILER = $(srcdir)/../run
 TESTS += tests/tc.ipynb tests/ti.ipynb tests/misc.ipynb tests/common.ipynb \
@@ -57,4 +58,5 @@ TESTS += tests/ast.ipynb
 TESTS += tests/bind.ipynb tests/escapes.ipynb
 TESTS += tests/type.ipynb tests/combine.ipynb tests/astclone.ipynb \
 		 tests/desugar.ipynb tests/overload.ipynb
+TESTS += tests/llvmtranslate.ipynb
 
