@@ -8,6 +8,7 @@ from typing import List, Literal
 
 class BackendType(Enum):
     llvm: Literal["llvm"] = "llvm"
+    hir: Literal["hir"] = "hir"
     mips: Literal["mips"] = "mips"
 
 
@@ -41,6 +42,9 @@ try_import(
         "desugar",
         "overload",
         "llvmtranslate",
+        "tree",
+        "translate",
+        "temp",
     ],
 )
 

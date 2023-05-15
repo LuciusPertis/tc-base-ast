@@ -269,6 +269,24 @@ class TiExecutor:
         self._rm_llvm()
         return self.data.result
 
+    @wrap_step(["translate"], "desugar")
+    def translate(self) -> tc.tree.Fragments:
+        self.data.fragments = tc.translate.translate(self.data.ast)
+        return self.data.fragments
+
+    @wrap_step([], "translate", tc.BackendType.hir)
+    def hir_file(self) -> str:
+        self.hir_tmp = tempfile.NamedTemporaryFile(delete=False)
+        self.hir_tmp.write(str(self.data.fragments).encode())
+        self.hir_tmp.flush()
+        return self.hir_tmp.name
+
+    @wrap_step([], "hir_file", tc.BackendType.hir)
+    def hir(self) -> Optional[str]:
+        self._run_cmd("havm", self.hir_tmp.name)
+        self._rm_attribute_temp("hir_tmp")
+        return self.data.result
+
     def frontend_run(self) -> None:
         """Run parse, bind and type depending of TC step"""
         self.parse()
@@ -285,6 +303,9 @@ class TiExecutor:
         self.frontend_run()
         if self.backend == tc.BackendType.llvm:
             return self.llvm()
+        self.translate()
+        if self.backend == tc.BackendType.hir:
+            return self.hir()
         return None
 
     def backend_run(self) -> None:
@@ -317,6 +338,7 @@ if __name__ == "__main__":
         default=tc.BackendType.mips,
         help="use BACKEND as back-end.  Can be either "
         f"`{tc.BackendType.llvm.value}' (LLVM), "
+        f"`{tc.BackendType.hir.value}' (tree HIR), "
         f"`{tc.BackendType.mips.value}' (MIPS assembly language) "
         "[default: %default]",
     )

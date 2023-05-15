@@ -26,6 +26,8 @@
 
             buildenvPkgs = with buildenv.outputs.packages.${system}; [
               reflex
+              havm
+              nolimips
             ];
 
           in

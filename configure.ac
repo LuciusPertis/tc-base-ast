@@ -12,7 +12,7 @@ AC_PREREQ([2.64])
 ## Package set up.  ##
 ## ---------------- ##
 
-AC_INIT([LRDE Tiger Compiler], [1.92.e], [tiger@lrde.epita.fr], [tc],
+AC_INIT([LRDE Tiger Compiler], [1.92.f], [tiger@lrde.epita.fr], [tc],
         [http://tiger.lrde.epita.fr])
 
 # Auxiliary files.
@@ -222,6 +222,8 @@ AM_CONDITIONAL([IA32_FREEBSD],
 AM_CONDITIONAL([SUPPORTED_IA32],
                [echo "$host" | grep -q '^\(i.86\|x86_64\).*linux\|^\(i.86\|amd64\).*freebsd'])
 
+# HAVM.
+TC_PROG([havm], [>=TC_HAVM_PREREQ], [HAVM], [The Tree Virtual Machine])
 
 # Debian does not provide a llvm-config binary
 # FIXME: bump to version 15 once nixpkgs is updated.

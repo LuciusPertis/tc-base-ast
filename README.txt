@@ -1,6 +1,6 @@
 
 Number of suppressed lines, suppressed chunks, average chunks size:
-.                             : 4388 387  11
+.                             : 4747 442  10
     lib                       :  249  15  16
         misc                  :  249  15  16
             scoped-map.hh     :   65   2  32
@@ -10,8 +10,8 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             test-symbol.cc    :    1   1   1
             unique.hxx        :    8   5   1
             variant.hxx       :    1   1   1
-    src                       : 4139 372  11
-        ast                   : 1435  98  14
+    src                       : 4498 427  10
+        ast                   : 1437  99  14
             array-exp.cc      :   20   1  20
             array-exp.hh      :   42   1  42
             array-exp.hxx     :   34   1  34
@@ -33,6 +33,7 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             field-var.cc      :   11   1  11
             field-var.hh      :   42   1  42
             field-var.hxx     :   34   1  34
+            function-dec.hh   :    2   1   2
             if-exp.cc         :   20   1  20
             if-exp.hh         :   53   1  53
             if-exp.hxx        :   34   1  34
@@ -127,6 +128,16 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             tasks.cc          :    1   1   1
             tiger-driver.hxx  :   14  14   1
             tiger-parser.cc   :    5   3   1
+        temp                  :   54  16   3
+            identifier.hxx    :   54  16   3
+        translate             :  260  37   7
+            exp.cc            :   34   6   5
+            level.cc          :    3   1   3
+            translation.cc    :  109  10  10
+            translation.hh    :    9   1   9
+            translator.cc     :  105  19   5
+        tree                  :   43   1  43
+            fragment.cc       :   43   1  43
         type                  :  692  68  10
             array.cc          :    7   1   7
             array.hh          :   23   1  23

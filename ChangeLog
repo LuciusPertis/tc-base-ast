@@ -1,3 +1,15 @@
+2023-04-16  Nicolas Fidel  <nico24093@gmail.com>
+
+	nix: bump to llvm14
+
+	* flake.nix: Here.
+
+2023-04-16  Mael Cravero  <mael.cravero@epita.fr>
+
+	Version 1.92.e for 2025-tc-L.0
+
+	* NEWS.txt, configure.ac, .last-cl-gen, ChangeLog: here.
+
 2023-04-01  Mael Cravero  <mael.cravero@epita.fr>
 
 	Version 1.92.d for 2025-tc-4.0
