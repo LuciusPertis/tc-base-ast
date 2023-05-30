@@ -1,3 +1,9 @@
+2023-05-15  Mael Cravero  <mael.cravero@epita.fr>
+
+	Version 1.92.f for 2025-tc-5.0
+
+	* NEWS.txt, configure.ac, .last-cl-gen, ChangeLog: here.
+
 2023-04-16  Nicolas Fidel  <nico24093@gmail.com>
 
 	nix: bump to llvm14
@@ -22760,7 +22766,7 @@
 
 2010-01-08  Roland Levillain  <roland@lrde.epita.fr>
 
-	Handle $Id: 50c1d379c091144c74cef8759e836188d758da26 $ using gitattributes.
+	Handle $Id: de136e79e9e0b6474c10859364848f6e667a959e $ using gitattributes.
 
 2010-01-08  Roland Levillain  <roland@lrde.epita.fr>
 
@@ -47832,7 +47838,7 @@
 	* src/Makefile.am: Adjust.
 	* Makefile.am (version.h): Replace with...
 	(authors.h): these.
-	* tests/tc-check.in ($revision): Use $Id: 50c1d379c091144c74cef8759e836188d758da26 $.
+	* tests/tc-check.in ($revision): Use $Id: de136e79e9e0b6474c10859364848f6e667a959e $.
 
 
 	git-svn-id: https://svn.lrde.epita.fr/svn/tc/trunk@1507 1f7e7f5b-0dda-0310-9018-85e83a419b00

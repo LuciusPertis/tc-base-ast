@@ -13,6 +13,7 @@
 namespace misc
 {
   template <typename T, typename... Ts>
+    requires VariantTypes<T, Ts...>
   template <typename U>
     requires ContainsTypeSet<U, T, Ts...>
   variant<T, Ts...>::variant(const U& rhs)
@@ -20,6 +21,7 @@ namespace misc
   {}
 
   template <typename T, typename... Ts>
+    requires VariantTypes<T, Ts...>
   template <typename U>
     requires ContainsTypeSet<U, T, Ts...>
   variant<T, Ts...>& variant<T, Ts...>::operator=(const U& rhs)
@@ -31,6 +33,7 @@ namespace misc
   }
 
   template <typename T, typename... Ts>
+    requires VariantTypes<T, Ts...>
   template <typename U>
     requires ContainsTypeGet<U, T, Ts...>
   variant<T, Ts...>::operator U&()
@@ -39,6 +42,7 @@ namespace misc
   }
 
   template <typename T, typename... Ts>
+    requires VariantTypes<T, Ts...>
   template <typename U>
     requires ContainsTypeGet<U, T, Ts...>
   variant<T, Ts...>::operator const U&() const
@@ -47,6 +51,7 @@ namespace misc
   }
 
   template <typename T, typename... Ts>
+    requires VariantTypes<T, Ts...>
   template <typename V>
     requires Visits<V, T, Ts...>
   auto variant<T, Ts...>::visit(V&& visitor) const
@@ -55,6 +60,7 @@ namespace misc
   }
 
   template <typename T, typename... Ts>
+    requires VariantTypes<T, Ts...>
   template <typename V, class... Variants>
   auto variant<T, Ts...>::visit(V&& visitor, Variants&&... vars)
   {
@@ -62,6 +68,7 @@ namespace misc
   }
 
   template <typename T, typename... Ts>
+    requires VariantTypes<T, Ts...>
   std::ostream& operator<<(std::ostream& os, const variant<T, Ts...>& obj)
   {
     PrintVisitor pv(os);

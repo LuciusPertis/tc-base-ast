@@ -287,6 +287,29 @@ class TiExecutor:
         self._rm_attribute_temp("hir_tmp")
         return self.data.result
 
+    @wrap_step(["canon"], "translate")
+    def canon(self) -> tc.tree.Fragments:
+        tc.canon.canonicalize(self.data.fragments)
+        return self.data.fragments
+
+    @wrap_step(["canon"], "canon")
+    def traces(self) -> tc.tree.Fragments:
+        tc.canon.make_traces(self.data.fragments)
+        return self.data.fragments
+
+    @wrap_step([], "traces", tc.BackendType.lir)
+    def lir_file(self) -> str:
+        self.lir_tmp = tempfile.NamedTemporaryFile(delete=False)
+        self.lir_tmp.write(str(self.data.fragments).encode())
+        self.lir_tmp.flush()
+        return self.lir_tmp.name
+
+    @wrap_step([], "lir_file", tc.BackendType.lir)
+    def lir(self) -> Optional[str]:
+        self._run_cmd("havm", "-l", self.lir_tmp.name)
+        self._rm_attribute_temp("lir_tmp")
+        return self.data.result
+
     def frontend_run(self) -> None:
         """Run parse, bind and type depending of TC step"""
         self.parse()
@@ -306,6 +329,8 @@ class TiExecutor:
         self.translate()
         if self.backend == tc.BackendType.hir:
             return self.hir()
+        if self.backend == tc.BackendType.lir:
+            return self.lir()
         return None
 
     def backend_run(self) -> None:
@@ -339,6 +364,7 @@ if __name__ == "__main__":
         help="use BACKEND as back-end.  Can be either "
         f"`{tc.BackendType.llvm.value}' (LLVM), "
         f"`{tc.BackendType.hir.value}' (tree HIR), "
+        f"`{tc.BackendType.lir.value}' (tree LIR), "
         f"`{tc.BackendType.mips.value}' (MIPS assembly language) "
         "[default: %default]",
     )

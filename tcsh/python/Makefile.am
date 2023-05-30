@@ -51,6 +51,7 @@ $(srcdir)/run.stamp: $(RUN_IN)
 TESTS =
 TESTS += tcsh-llvm.test
 TESTS += tcsh-hir.test
+TESTS += tcsh-lir.test
 
 LOG_COMPILER = $(srcdir)/../run
 TESTS += tests/tc.ipynb tests/ti.ipynb tests/misc.ipynb tests/common.ipynb \
@@ -61,4 +62,5 @@ TESTS += tests/type.ipynb tests/combine.ipynb tests/astclone.ipynb \
 		 tests/desugar.ipynb tests/overload.ipynb
 TESTS += tests/llvmtranslate.ipynb
 TESTS += tests/translate.ipynb tests/tree.ipynb tests/temp.ipynb
+TESTS += tests/canon.ipynb
 
