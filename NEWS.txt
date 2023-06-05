@@ -1,3 +1,5 @@
+Bump 1.92.h, 2023-06-05 for tc-7
+
 Bump 1.92.g, 2023-05-30 for tc-6
 
 Bump 1.92.f, 2023-05-15 for tc-5

@@ -47,6 +47,8 @@ try_import(
         "translate",
         "temp",
         "canon",
+        "target",
+        "assem",
     ],
 )
 

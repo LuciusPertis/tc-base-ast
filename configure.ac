@@ -12,7 +12,7 @@ AC_PREREQ([2.64])
 ## Package set up.  ##
 ## ---------------- ##
 
-AC_INIT([LRDE Tiger Compiler], [1.92.g], [tiger@lrde.epita.fr], [tc],
+AC_INIT([LRDE Tiger Compiler], [1.92.h], [tiger@lrde.epita.fr], [tc],
         [http://tiger.lrde.epita.fr])
 
 # Auxiliary files.
@@ -238,6 +238,14 @@ AC_ARG_ENABLE([static-llvm],
 # Set STATIC_LLVM when linking statically
 AM_CONDITIONAL([STATIC_LLVM], [test x"$enable_static_llvm" = x"yes"])
 
+# Nolimips.
+TC_PROG([nolimips], [>=TC_NOLIMIPS_PREREQ], [NOLIMIPS], [MIPS virtual machine])
+
+# Require (optionally) arm compiler. Since Debian does not provide a binary
+# without version as extension, we have to check what is the installed
+# version. Also check for binary for Archlinux that have a different name.
+AC_CHECK_PROGS(ARMCC, [arm-linux-gnueabihf-gcc arm-linux-gnueabihf-gcc-7], no)
+AC_CHECK_PROGS(QEMU_ARM, [qemu-arm], no)
 
 
 # Clang-format.

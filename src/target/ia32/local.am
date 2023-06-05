@@ -1,0 +1,24 @@
+dist_noinst_DATA +=                                                            \
+  %D%/runtime-gnu-linux.s                                                      \
+  %D%/runtime-freebsd.s
+
+IA32_RUNTIME_GENERATION = %D%/generate-runtime.sh
+EXTRA_DIST += $(IA32_RUNTIME_GENERATION)
+CLEANFILES += %D%/runtime-gnu-linux.cc
+%D%/runtime-gnu-linux.cc: %D%/runtime-gnu-linux.s
+	$(AM_V_GEN)$(srcdir)/$(IA32_RUNTIME_GENERATION) $< $@
+
+src_libtc_la_SOURCES +=                                                        \
+  %D%/fwd.hh                                                                   \
+  %D%/cpu.hh %D%/cpu.cc                                                        \
+  %D%/gas-layout.hh %D%/gas-layout.cc                                          \
+  %D%/gas-assembly.hh %D%/gas-assembly.cc                                      \
+  %D%/gas-codegen.cc %D%/gas-codegen.hh                                        \
+  %D%/gas-matcher.cc %D%/gas-matcher.hh                                        \
+  %D%/target.hh %D%/target.cc
+
+nodist_src_libtc_la_SOURCES +=                                                 \
+  %D%/runtime-gnu-linux.cc
+
+check_PROGRAMS += %D%/test-target
+%C%_test_target_LDADD = src/libtc.la

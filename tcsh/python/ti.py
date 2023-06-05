@@ -310,6 +310,14 @@ class TiExecutor:
         self._rm_attribute_temp("lir_tmp")
         return self.data.result
 
+    @wrap_step(["target"], "traces")
+    def init_target(self) -> Union[tc.target.Ia32Target, tc.target.MipsTarget]:
+        if self.backend == tc.BackendType.mips:
+            self.data.target = tc.target.MipsTarget(tc.target.CpuLimits())
+        else:
+            self.data.target = tc.target.Ia32Target()
+        return self.data.target
+
     def frontend_run(self) -> None:
         """Run parse, bind and type depending of TC step"""
         self.parse()
@@ -331,6 +339,7 @@ class TiExecutor:
             return self.hir()
         if self.backend == tc.BackendType.lir:
             return self.lir()
+        self.init_target()
         return None
 
     def backend_run(self) -> None:
