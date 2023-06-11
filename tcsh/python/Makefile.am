@@ -64,4 +64,5 @@ TESTS += tests/llvmtranslate.ipynb
 TESTS += tests/translate.ipynb tests/tree.ipynb tests/temp.ipynb
 TESTS += tests/canon.ipynb
 TESTS += tests/target.ipynb tests/assem.ipynb
+TESTS += tests/liveness.ipynb
 

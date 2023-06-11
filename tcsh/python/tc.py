@@ -49,6 +49,7 @@ try_import(
         "canon",
         "target",
         "assem",
+        "liveness",
     ],
 )
 
