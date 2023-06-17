@@ -10,6 +10,7 @@ class BackendType(Enum):
     llvm: Literal["llvm"] = "llvm"
     hir: Literal["hir"] = "hir"
     lir: Literal["lir"] = "lir"
+    ia32: Literal["ia32"] = "ia32"
     mips: Literal["mips"] = "mips"
 
 
@@ -50,6 +51,7 @@ try_import(
         "target",
         "assem",
         "liveness",
+        "regalloc",
     ],
 )
 

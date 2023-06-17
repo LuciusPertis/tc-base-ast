@@ -318,6 +318,62 @@ class TiExecutor:
             self.data.target = tc.target.Ia32Target()
         return self.data.target
 
+    @wrap_step(["target", "regalloc", "common"], "init_target")
+    def allocate(self) -> tc.assem.Fragments:
+        self.data.tempmap = self.data.target.cpu_get().tempmap_get()
+        self.data.lir_fragments = tc.target.lir_to_assem(
+            self.data.fragments, self.data.target
+        )
+        self.data.tempmap = tc.regalloc.allocate_registers(
+            self.data.lir_fragments,
+            self.data.target,
+            self.data.tempmap,
+            tc.common.cvar.timer,
+        )
+        tc.target.frame_allocate(self.data.lir_fragments, self.data.target)
+        return self.data.lir_fragments
+
+    @wrap_step(["target"], "allocate")
+    def asm(self) -> str:
+        self._rm_asm()
+        self.temp_dir = tempfile.mkdtemp()
+        # Dump assembly code output into a temporary file.
+        self.asm_output = os.path.join(self.temp_dir, "asm.s")
+        asm_ostr = tc.common.Ofstream(self.asm_output)
+        tc.target.runtime_dump(self.data.target, False, asm_ostr.to())
+        tc.target.instructions_dump(
+            self.data.lir_fragments,
+            self.data.target,
+            self.data.tempmap,
+            asm_ostr.to(),
+        )
+        asm_ostr.close()
+        return self.asm_output
+
+    def _rm_asm(self) -> None:
+        self._rm_attribute_file("asm_output")
+        self._rm_attribute_file("binary")
+        self._rm_attribute_dir("temp_dir")
+
+    @wrap_step([], "asm", tc.BackendType.ia32)
+    def ia32_bin(self) -> str:
+        self._rm_attribute_file("binary")
+        self.binary = os.path.join(self.temp_dir, "bin")
+        os.system(f"gcc -m32 -no-pie -x assembler {self.asm_output} -o {self.binary}")
+        return self.binary
+
+    @wrap_step([], "ia32_bin", tc.BackendType.ia32)
+    def ia32(self) -> Optional[str]:
+        self._run_cmd(self.binary)
+        self._rm_asm()
+        return self.data.result
+
+    @wrap_step([], "asm", tc.BackendType.mips)
+    def mips(self) -> Optional[str]:
+        self._run_cmd("nolimips", "-l", "nolimips", "-Ne", self.asm_output)
+        self._rm_asm()
+        return self.data.result
+
     def frontend_run(self) -> None:
         """Run parse, bind and type depending of TC step"""
         self.parse()
@@ -340,6 +396,10 @@ class TiExecutor:
         if self.backend == tc.BackendType.lir:
             return self.lir()
         self.init_target()
+        if self.backend == tc.BackendType.mips:
+            return self.mips()
+        if self.backend == tc.BackendType.ia32:
+            return self.ia32()
         return None
 
     def backend_run(self) -> None:
@@ -374,6 +434,7 @@ if __name__ == "__main__":
         f"`{tc.BackendType.llvm.value}' (LLVM), "
         f"`{tc.BackendType.hir.value}' (tree HIR), "
         f"`{tc.BackendType.lir.value}' (tree LIR), "
+        f"`{tc.BackendType.ia32.value}' (IA-32 assembly language), or "
         f"`{tc.BackendType.mips.value}' (MIPS assembly language) "
         "[default: %default]",
     )

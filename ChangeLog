@@ -1,3 +1,9 @@
+2023-06-11  Mael Cravero  <mael.cravero@epita.fr>
+
+	Version 1.92.j for 2025-tc-8.0
+
+	* NEWS.txt, configure.ac, .last-cl-gen, ChangeLog: here.
+
 2023-06-05  Mael Cravero  <mael.cravero@epita.fr>
 
 	Version 1.92.h for 2025-tc-7.0
@@ -22778,7 +22784,7 @@
 
 2010-01-08  Roland Levillain  <roland@lrde.epita.fr>
 
-	Handle $Id: de136e79e9e0b6474c10859364848f6e667a959e $ using gitattributes.
+	Handle $Id: c65d9874db9cfe7042b30acf3c15a15886117aa5 $ using gitattributes.
 
 2010-01-08  Roland Levillain  <roland@lrde.epita.fr>
 
@@ -47850,7 +47856,7 @@
 	* src/Makefile.am: Adjust.
 	* Makefile.am (version.h): Replace with...
 	(authors.h): these.
-	* tests/tc-check.in ($revision): Use $Id: de136e79e9e0b6474c10859364848f6e667a959e $.
+	* tests/tc-check.in ($revision): Use $Id: c65d9874db9cfe7042b30acf3c15a15886117aa5 $.
 
 
 	git-svn-id: https://svn.lrde.epita.fr/svn/tc/trunk@1507 1f7e7f5b-0dda-0310-9018-85e83a419b00

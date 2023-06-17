@@ -52,6 +52,11 @@ TESTS =
 TESTS += tcsh-llvm.test
 TESTS += tcsh-hir.test
 TESTS += tcsh-lir.test
+# Check the IA-32 back-end on that platform only.
+if IA32_GNU_LINUX
+  TESTS += tcsh-ia32.test
+endif IA32_GNU_LINUX
+TESTS += tcsh-mips.test
 
 LOG_COMPILER = $(srcdir)/../run
 TESTS += tests/tc.ipynb tests/ti.ipynb tests/misc.ipynb tests/common.ipynb \
@@ -65,4 +70,5 @@ TESTS += tests/translate.ipynb tests/tree.ipynb tests/temp.ipynb
 TESTS += tests/canon.ipynb
 TESTS += tests/target.ipynb tests/assem.ipynb
 TESTS += tests/liveness.ipynb
+TESTS += tests/regalloc.ipynb
 

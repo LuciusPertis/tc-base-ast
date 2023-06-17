@@ -1,6 +1,6 @@
 
 Number of suppressed lines, suppressed chunks, average chunks size:
-.                             : 6127 501  12
+.                             : 5979 525  11
     lib                       :  275  19  14
         misc                  :  275  19  14
             graph.hh          :    3   1   3
@@ -13,7 +13,7 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             unique.hxx        :    8   5   1
             variant.hh        :    6   1   6
             variant.hxx       :    1   1   1
-    src                       : 5852 482  12
+    src                       : 5704 506  11
         ast                   : 1437  99  14
             array-exp.cc      :   20   1  20
             array-exp.hh      :   42   1  42
@@ -141,21 +141,21 @@ Number of suppressed lines, suppressed chunks, average chunks size:
             tasks.cc          :    1   1   1
             tiger-driver.hxx  :   14  14   1
             tiger-parser.cc   :    5   3   1
-        target                :  983  35  28
-            arm               :  231   8  28
+        regalloc              :  279  27  10
+            color.cc          :  277  26  10
+            regallocator.cc   :    2   1   2
+        target                :  556  32  17
+            arm               :  108   7  15
                 arm-assembly.cc:    4   2   2
-                arm-codegen.cc:  123   1 123
                 arm-matcher.cc:   14   3   4
                 runtime.s     :   90   2  45
-            ia32              :  343   8  42
+            ia32              :  162   7  23
                 gas-assembly.cc:    5   2   2
-                gas-codegen.cc:  181   1 181
                 gas-matcher.cc:   12   3   4
                 runtime-gnu-linux.s:  145   2  72
-            mips              :  409  19  21
+            mips              :  286  18  15
                 runtime.s     :  214   6  35
                 spim-assembly.cc:   58   9   6
-                spim-codegen.cc:  123   1 123
                 spim-matcher.cc:   14   3   4
         temp                  :   54  16   3
             identifier.hxx    :   54  16   3

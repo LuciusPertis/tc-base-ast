@@ -286,6 +286,185 @@ namespace target::ia32
                                    const temp::temp_set_type& spilled,
                                    temp::temp_set_type& created_temps) const
   {
-    // To be implemented at TC-9, when there are actual spills.
+    // tmp2mem associate to the spill temp the frame
+    // pointer needed to know where data are now saved
+    // in frame.
+    using tmp_to_mem_map = std::map<temp::Temp, const frame::Access*>;
+    tmp_to_mem_map tmp2mem;
+
+    // We "AllocLocal" each v of SPILLED and store each mem offset
+    // in a map associated to each "replaced temp" name ("symbol").
+    for (const temp::Temp& t : spilled)
+      tmp2mem[t] = frag.frame_get().frame_alloc();
+
+#ifdef ALTERNATIVE_REWRITE_PROGRAM
+    {
+      // We are about to replace the Instr list.
+      assem::Instrs new_instrs;
+
+      // For each Instr of the original Instr list, we check if any fetch is
+      // needed before it, which would be added to the new Instr list, before
+      // copying the current Instr* in it, and then add any needed store after
+      // it.
+      for (assem::Instr* instr : frag.instrs_get())
+        {
+          assertion(instr != nullptr);
+
+          // Keep track of all used temps and their new value after the rewrite of
+          // their use.
+          temp::TempMap instr_used_temps;
+
+          for (auto& temp_uses : instr->use())
+            if (spilled.has(temp_uses))
+              {
+                temp::Temp instr_temp;
+                created_temps += instr_temp;
+
+                assem::Instrs fetch = load_inframe(tmp2mem.at(temp_uses),
+                                                   instr_temp, cpu_->fp_reg());
+
+                // Save the new value of temp_uses.
+                instr_used_temps.emplace(temp_uses, instr_temp);
+
+                temp_uses = instr_temp;
+
+                // All the fetch Instrs are moved in new_instrs, and they are
+                // cleared from fetch to avoid multiple pointer references and
+                // muliple deletes.
+                new_instrs.insert(new_instrs.end(), fetch.begin(), fetch.end());
+                fetch.clear();
+              }
+
+          // The current Instr is moved into the new Instr list (the old list is
+          // cleared at the end)
+          new_instrs.push_back(instr);
+
+          for (auto& temp_defs : instr->def())
+            if (spilled.has(temp_defs))
+              {
+                // If we just redefined the temp in the same instruction, reuse it.
+                if (const auto used_temp = instr_used_temps.find(temp_defs);
+                    used_temp != instr_used_temps.end())
+                  {
+                    auto instr_temp = used_temp->second;
+                    assem::Instrs store = store_inframe(
+                      tmp2mem.at(temp_defs), instr_temp, cpu_->fp_reg());
+                    temp_defs = instr_temp;
+
+                    // All the store Instrs are moved in new_instrs, and they are
+                    // cleared from store to avoid multiple pointer references and
+                    // muliple deletes.
+                    new_instrs.insert(new_instrs.end(), store.begin(),
+                                      store.end());
+                    store.clear();
+                  }
+                // Otherwise, create a new temp.
+                else
+                  {
+                    temp::Temp instr_temp;
+                    created_temps += instr_temp;
+                    assem::Instrs store = store_inframe(
+                      tmp2mem.at(temp_defs), instr_temp, cpu_->fp_reg());
+                    temp_defs = instr_temp;
+
+                    // All the store Instrs are moved in new_instrs, and they are
+                    // cleared from store to avoid multiple pointer references and
+                    // muliple deletes.
+                    new_instrs.insert(new_instrs.end(), store.begin(),
+                                      store.end());
+                    store.clear();
+                  }
+              }
+        }
+
+      // We wipe out the original Instr list, to avoid multiple pointer
+      // references (and multiple deletes)
+      frag.instrs_get().clear();
+      frag.instrs_set(new_instrs);
+    }
+#else
+    {
+      assem::Instrs& instrs = frag.instrs_get();
+
+      // We take each "Instr" from the Instr list "instrs", to see if there
+      // is any temporary from SPILLED that needs to be replaced in
+      // the current Instr.
+      for (assem::Instrs::iterator i = instrs.begin(); i != instrs.end(); ++i)
+        {
+          assertion(*i != nullptr);
+
+          // Keep track of all defined temps and their new value after the rewrite
+          // of their definition.
+          temp::TempMap instr_def_temps;
+
+          // For each Instr, we check by getting temp list from method
+          // def(), if there is any temporary from SPILLED that needs
+          // to be replaced in the Instr "def".
+          for (auto& temp_defs : (*i)->def())
+            if (spilled.has(temp_defs))
+              {
+                // temp we'll use to replace the problematic temp
+                // in the color graph.
+                temp::Temp instr_temp;
+                created_temps += instr_temp;
+
+                // Store the spilled temp to a frame pointer's relative
+                // address.
+                auto store =
+                  store_inframe(tmp2mem[temp_defs], instr_temp, cpu_->fp_reg());
+                i = std::prev(
+                  misc::position_append_and_move(instrs, std::next(i), store));
+
+                // Save the new value of temp_defs.
+                instr_def_temps.emplace(temp_defs, instr_temp);
+
+                // We replace the problematic temp in the "def"
+                // by the new temp 'instr_temp'.
+                temp_defs = instr_temp;
+              }
+          for (auto& temp_uses : (*i)->use())
+            if (spilled.has(temp_uses))
+              {
+                // If we just redefined the temp in the same instruction, reuse
+                // it.
+                if (const auto def_temp = instr_def_temps.find(temp_uses);
+                    def_temp != instr_def_temps.end())
+                  {
+                    // temp we'll use to replace the problematic temp
+                    // in the color graph.
+                    auto instr_temp = def_temp->second;
+                    // Load the spilled temp from a frame pointer's relative
+                    // address into the new temp.
+                    auto fetch = load_inframe(tmp2mem[temp_uses], instr_temp,
+                                              cpu_->fp_reg());
+                    i = std::next(
+                      misc::position_append_and_move(instrs, i, fetch));
+
+                    // We replace the problematic temp in the "use"
+                    // by the new temp 'instr_temp'.
+                    temp_uses = instr_temp;
+                  }
+                // Otherwise, create a new temp.
+                else
+                  {
+                    // temp we'll use to replace the problematic temp
+                    // in the color graph.
+                    temp::Temp instr_temp;
+                    created_temps += instr_temp;
+                    // Load the spilled temp from a frame pointer's relative
+                    // address into the new temp.
+                    auto fetch = load_inframe(tmp2mem[temp_uses], instr_temp,
+                                              cpu_->fp_reg());
+                    i = std::next(
+                      misc::position_append_and_move(instrs, i, fetch));
+
+                    // We replace the problematic temp in the "use"
+                    // by the new temp 'instr_temp'.
+                    temp_uses = instr_temp;
+                  }
+              }
+        }
+    }
+#endif /* ALTERNATIVE_REWRITE_PROGRAM */
   }
 } // namespace target::ia32
